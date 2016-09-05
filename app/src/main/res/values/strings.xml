@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BeautifulThing</string>
+
+    <!--main bottom text begin-->
+    <string name="magazine">画报</string>
+    <string name="discover">有物</string>
+    <string name="designer">设计师</string>
+    <string name="mine">我</string>
+    <!--main bottom text end-->
+
+</resources>
