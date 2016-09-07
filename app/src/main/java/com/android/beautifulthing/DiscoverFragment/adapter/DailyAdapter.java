@@ -1,6 +1,7 @@
 package com.android.beautifulthing.DiscoverFragment.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.beautifulthing.DiscoverFragment.DetailActivity;
 import com.android.beautifulthing.DiscoverFragment.bean.DailyBean;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
@@ -113,6 +115,9 @@ public class DailyAdapter extends BaseAdapter {
         @Override
         public void onClick(View v) {
             Toast.makeText(mContext, "" + id, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(mContext, DetailActivity.class);
+            intent.putExtra("id", id);
+            mContext.startActivity(intent);
         }
     }
 }

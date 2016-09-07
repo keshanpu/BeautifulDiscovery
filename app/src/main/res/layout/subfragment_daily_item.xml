@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="550dp"
         android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/relative_layout_click"
@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/icon_splash"
-                android:scaleType="fitXY"/>
+                android:scaleType="centerCrop"/>
             <TextView
                 android:id="@+id/daily_item_name_tv"
                 android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon_splash"
                 app:civ_border_width="2dp"
-                app:civ_border_color="#FFFD6563"/>
+                app:civ_border_color="#000000"/>
 
             <LinearLayout
                 android:layout_width="0dp"
