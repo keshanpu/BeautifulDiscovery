@@ -12,6 +12,7 @@ public final class R {
 		public static final int slide_in_from_top = 0x7f040001;
 		public static final int slide_out_to_bottom = 0x7f040002;
 		public static final int slide_out_to_top = 0x7f040003;
+		public static final int top_rotate = 0x7f040004;
 	}
 	public static final class attr {
 		public static final int ptrAdapterViewBackground = 0x7f010010;
@@ -42,17 +43,20 @@ public final class R {
 		public static final int indicator_right_padding = 0x7f060004;
 	}
 	public static final class drawable {
-		public static final int box_01 = 0x7f020000;
-		public static final int box_02 = 0x7f020001;
-		public static final int box_03 = 0x7f020002;
-		public static final int box_04 = 0x7f020003;
-		public static final int box_05 = 0x7f020004;
-		public static final int box_anim = 0x7f020005;
-		public static final int default_ptr_flip = 0x7f020006;
-		public static final int default_ptr_rotate = 0x7f020007;
-		public static final int indicator_arrow = 0x7f020008;
-		public static final int indicator_bg_bottom = 0x7f020009;
-		public static final int indicator_bg_top = 0x7f02000a;
+		public static final int default_ptr_flip = 0x7f020000;
+		public static final int default_ptr_rotate = 0x7f020001;
+		public static final int indicator_arrow = 0x7f020002;
+		public static final int indicator_bg_bottom = 0x7f020003;
+		public static final int indicator_bg_top = 0x7f020004;
+		public static final int loading_1 = 0x7f020005;
+		public static final int loading_2 = 0x7f020006;
+		public static final int loading_3 = 0x7f020007;
+		public static final int loading_4 = 0x7f020008;
+		public static final int loading_5 = 0x7f020009;
+		public static final int loading_6 = 0x7f02000a;
+		public static final int loading_7 = 0x7f02000b;
+		public static final int loading_8 = 0x7f02000c;
+		public static final int loading_anim = 0x7f02000d;
 	}
 	public static final class id {
 		public static final int both = 0x7f070003;

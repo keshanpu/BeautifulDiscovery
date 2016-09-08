@@ -17,7 +17,7 @@ public class DailyModel implements IDailyModel{
     private DailyBean dataBody;
 
     @Override
-    public void loadDatas(String timestamp, final IDailyPresenter.Callback callback) {
+    public void loadDatas(long timestamp, final IDailyPresenter.Callback callback) {
 
         HttpUtils.init().getDailyDatas(timestamp).enqueue(new Callback<DailyBean>() {
 

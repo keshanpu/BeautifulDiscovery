@@ -10,13 +10,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.beautifulthing.DiscoverFragment.adapter.CommonAdapter;
+import com.android.beautifulthing.DiscoverFragment.bean.CommonBean;
+import com.android.beautifulthing.DiscoverFragment.presenter.ICommonPresenter;
+import com.android.beautifulthing.DiscoverFragment.presenter.impl.CommonPresenter;
+import com.android.beautifulthing.DiscoverFragment.view.ICommonView;
+import com.android.beautifulthing.R;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by ydy on 2016/9/6.
  * SubFragment---Men
  */
-public class MenFragment extends Fragment {
+public class MenFragment extends Fragment implements ICommonView{
+
+    public static final int CATEGORY_TAG = 65;
+    private int PAGER = 1;
+    private int PAGER_SIZE = 20;
 
     private Context mContext;
+    private PullToRefreshListView mRefreshListView;
+    private ICommonPresenter commonPresenter;
+    private List<CommonBean.DataBean.ProductsBean> products = new ArrayList<>();
+    private CommonAdapter mCommonAdapter;
 
     public static MenFragment newInstance(){
         MenFragment menFragment = new MenFragment();
@@ -32,9 +51,18 @@ public class MenFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        TextView tv = new TextView(mContext);
-        tv.setText("Men");
-        tv.setTextColor(Color.parseColor("#ffffff"));
-        return tv;
+        View view = inflater.inflate(R.layout.subfragment_daily_main_view, container, false);
+        mRefreshListView = (PullToRefreshListView) view.findViewById(R.id.subfragment_daily_refresh_listview);
+        //数据源
+        commonPresenter = new CommonPresenter(this);
+        commonPresenter.getDatas(CATEGORY_TAG, PAGER, PAGER_SIZE);
+        return view;
+    }
+
+    @Override
+    public void dataResult(CommonBean.DataBean dataBean) {
+        products.addAll(dataBean.getProducts());
+        mCommonAdapter = new CommonAdapter(mContext, products);
+        mRefreshListView.setAdapter(mCommonAdapter);
     }
 }

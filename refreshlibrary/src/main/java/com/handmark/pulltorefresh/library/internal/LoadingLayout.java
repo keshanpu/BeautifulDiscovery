@@ -172,7 +172,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 		// If we don't have a user defined drawable, load the default
 		imageDrawable = null;
 		if (null == imageDrawable) {
-			imageDrawable = context.getResources().getDrawable(R.drawable.box_anim);
+			imageDrawable = context.getResources().getDrawable(R.drawable.loading_anim);
 		}
 
 		// Set Drawable, and save width/height

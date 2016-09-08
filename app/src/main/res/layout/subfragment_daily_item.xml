@@ -30,7 +30,7 @@
                 android:text="qwertyuiopasdfghjklzxcvbnm"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:background="#90000000"/>
+                android:background="#D0000000"/>
             <TextView
                 android:id="@+id/daily_item_brief_tv"
                 android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                 android:text="qwer"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:background="#90000000"/>
+                android:background="#D0000000"/>
         </RelativeLayout>
 
         <LinearLayout

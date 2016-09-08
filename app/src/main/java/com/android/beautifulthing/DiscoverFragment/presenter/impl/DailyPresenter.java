@@ -17,7 +17,7 @@ public class DailyPresenter implements IDailyPresenter, IDailyPresenter.Callback
     IDailyView dailyView;
 
     @Override
-    public void getDatas(String timestamp) {
+    public void getDatas(long timestamp) {
         dailyModel.loadDatas(timestamp, this);
     }
 

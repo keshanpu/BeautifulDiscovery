@@ -7,6 +7,6 @@ import com.android.beautifulthing.DiscoverFragment.presenter.IDailyPresenter;
  */
 public interface IDailyModel {
 
-    void loadDatas(String timestamp, IDailyPresenter.Callback callback);
+    void loadDatas(long timestamp, IDailyPresenter.Callback callback);
 
 }

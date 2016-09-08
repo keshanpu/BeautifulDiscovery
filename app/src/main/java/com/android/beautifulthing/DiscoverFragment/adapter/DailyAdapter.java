@@ -114,7 +114,6 @@ public class DailyAdapter extends BaseAdapter {
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(mContext, "" + id, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(mContext, DetailActivity.class);
             intent.putExtra("id", id);
             mContext.startActivity(intent);

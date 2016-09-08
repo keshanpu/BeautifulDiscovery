@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IDailyPresenter {
 
-    void getDatas(String timestamp);
+    void getDatas(long timestamp);
 
     interface Callback{
         void success(List<DailyBean.DataBean.ProductsBean> productsBeanList);
