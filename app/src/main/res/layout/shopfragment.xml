@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="600dp">
+            <ImageView
+                android:id="@+id/shopfragment_iv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@mipmap/ic_launcher"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/shopfragment_iv"
+                android:background="#ffffff">
+                <TextView
+                    android:id="@+id/shopfragment_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="波特兰"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:textSize="@dimen/fragment_designer_main_size"
+                    android:layout_centerHorizontal="true"
+                    />
+                <TextView
+                    android:id="@+id/shopfragment_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wood and Faulk"
+                    android:textStyle="bold"
+                    android:layout_below="@id/shopfragment_city"
+                    android:layout_marginTop="10dp"
+                    android:textSize="@dimen/fragment_designer_main_size"
+                    android:layout_centerHorizontal="true"
+                    />
+                <TextView
+                    android:id="@+id/shopfragment_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="522 N Thompson St #1, Portland, OR 97211, United States"
+                    android:layout_below="@id/shopfragment_name"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+</RelativeLayout>

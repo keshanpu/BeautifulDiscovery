@@ -6,6 +6,8 @@
     <string name="discover">有物</string>
     <string name="designer">设计师</string>
     <string name="mine">我</string>
+    <string name="Focus_on">+关注</string>
+    <string name="loading">正在加载更多数据....</string>
     <!--main bottom text end-->
 
 </resources>

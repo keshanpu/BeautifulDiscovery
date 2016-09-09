@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/buyfragment_iv"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:src="@mipmap/ic_launcher"/>
+    <RelativeLayout
+        android:id="@+id/buyfragment_rl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/buyfragment_iv"
+        android:background="#ffffff">
+        <TextView
+            android:id="@+id/buyfragment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="Wood _ Faulk 官方网店"/>
+        <ImageView
+            android:id="@+id/buyfragment_iv2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignBottom="@id/buyfragment_name"
+            android:src="@drawable/ic_common_arrow_normal"/>
+    </RelativeLayout>
+</RelativeLayout>

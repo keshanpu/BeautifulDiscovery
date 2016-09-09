@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/activity_designerdetil_AppBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="10dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                    <RelativeLayout
+                        android:id="@+id/activity_designerdetil_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="600dp"
+                        android:background="#ffffff"
+                        app:layout_collapseMode="pin">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_launcher" />
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/activity_designerdetil_viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp" />
+
+                        <LinearLayout
+                            android:id="@+id/activity_designerdetil_indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/activity_designerdetil_viewpager"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/designerdetil_viewpager_seletcor" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/designerdetil_viewpager_seletcor" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/designerdetil_viewpager_seletcor" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/designerdetil_viewpager_seletcor" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/designerdetil_viewpager_seletcor" />
+                        </LinearLayout>
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/activity_designerdetil_iv"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/ic_launcher"
+                            app:civ_border_width="2dp" />
+
+                        <TextView
+                            android:id="@+id/activity_designerdetil_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/activity_designerdetil_iv"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:text="Maff pierce"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/fragment_designer_main_size" />
+
+                        <TextView
+                            android:id="@+id/activity_designerdetil_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/activity_designerdetil_name"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:text="Wood Faulk 创始人" />
+
+                        <TextView
+                            android:id="@+id/activity_designerdetil_cocept"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/activity_designerdetil_label"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:text="创始人创始人创始人创始人创始人创始人" />
+
+                        <Button
+                            android:id="@+id/activity_designerdetil_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/activity_designerdetil_cocept"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:background="#000000"
+                            android:text="@string/Focus_on"
+                            android:textColor="#ffffff" />
+
+                        <TextView
+                            android:id="@+id/activity_designerdetil_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/activity_designerdetil_btn"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:text="创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人" />
+                    </RelativeLayout>
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/activity_designerdetil_tablayout"
+                    app:tabSelectedTextColor="@color/colorAccent"
+                    app:tabTextColor="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/activity_designerdetil_viewpager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/activity_designerdetil_r2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="#000000"-->
+                <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+                <!--&gt;-->
+                <!--<com.android.beautifulthing.DesignerFragment.MyViewpager-->
+                    <!--android:id="@+id/activity_designerdetil_viewpager2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/activity_designerdetil_radio_group" />-->
+
+                <!--<RadioGroup-->
+                    <!--android:id="@id/activity_designerdetil_radio_group"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="5">-->
+
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/activity_designerdetil_bottom_1"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:button="@null"-->
+                        <!--android:gravity="center_horizontal" />-->
+
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/activity_designerdetil_bottom_2"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:button="@null"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:text="作品"-->
+                        <!--android:textColor="#ffffff" />-->
+
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/activity_designerdetil_bottom_3"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:button="@null"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:text="旗舰门店"-->
+                        <!--android:textColor="#ffffff" />-->
+
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/activity_designerdetil_bottom_4"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:button="@null"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:text="线上购买"-->
+                        <!--android:textColor="#ffffff" />-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/activity_designerdetil_bottom_5"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:button="@null"-->
+                    <!--android:gravity="center_horizontal" />-->
+            <!--</RadioGroup>-->
+            <!--</RelativeLayout>-->
+
+</android.support.design.widget.CoordinatorLayout>
