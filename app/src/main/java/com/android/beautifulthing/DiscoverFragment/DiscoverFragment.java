@@ -18,6 +18,7 @@ import com.android.beautifulthing.DiscoverFragment.subfragment.BagFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.DailyFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.JewelryFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.MenFragment;
+import com.android.beautifulthing.DiscoverFragment.subfragment.MylikeFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.OthersFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.ShoesFragment;
 import com.android.beautifulthing.R;
@@ -63,7 +64,7 @@ public class DiscoverFragment extends Fragment {
         mTabLayout = (TabLayout) view.findViewById(R.id.fragment_discovery_tablayout);
         mViewPager = (ViewPager) view.findViewById(R.id.fragment_discovery_viewpager);
         //设置TabLayout模式
-        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         //数据源
         loadDatas();
         //适配器创建与绑定
@@ -77,8 +78,7 @@ public class DiscoverFragment extends Fragment {
      * 加载数据，这里的数据就是subFragment
      */
     private void loadDatas() {
-//        titles.add("我喜欢的");
-//        fragments.add(MylikeFragment.newInstance());
+
         titles.add("Daily");
         titles.add("首饰");
         titles.add("包袋");
@@ -86,6 +86,8 @@ public class DiscoverFragment extends Fragment {
         titles.add("Men");
         titles.add("配饰");
         titles.add("其他");
+        titles.add("我喜欢的");
+
         fragments.add(DailyFragment.newInstance());
         fragments.add(JewelryFragment.newInstance());
         fragments.add(BagFragment.newInstance());
@@ -93,6 +95,7 @@ public class DiscoverFragment extends Fragment {
         fragments.add(MenFragment.newInstance());
         fragments.add(AccessoryFragment.newInstance());
         fragments.add(OthersFragment.newInstance());
+        fragments.add(MylikeFragment.newInstance());
     }
 
     class MyPagerAdapter extends FragmentStatePagerAdapter{

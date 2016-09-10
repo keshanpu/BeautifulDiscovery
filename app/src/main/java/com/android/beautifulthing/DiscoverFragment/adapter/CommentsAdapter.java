@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.android.beautifulthing.DiscoverFragment.bean.CommentBean;
 import com.android.beautifulthing.DiscoverFragment.bean.DetailBean;
 import com.android.beautifulthing.DiscoverFragment.tools.DateUtils;
 import com.android.beautifulthing.R;
@@ -17,15 +18,15 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by ydy on 2016/9/8.
+ * Created by ydy on 2016/9/10.
  */
-public class DetailCommentAdapter extends BaseAdapter{
+public class CommentsAdapter extends BaseAdapter{
 
     private Context mContext;
-    private List<DetailBean.DataBean.CommentsBean> commentsList;
+    private List<CommentBean.DataBean.CommentsBean> commentsList;
     private LayoutInflater mInflater;
 
-    public DetailCommentAdapter(Context context, List<DetailBean.DataBean.CommentsBean> comments) {
+    public CommentsAdapter(Context context, List<CommentBean.DataBean.CommentsBean> comments) {
         mContext = context;
         commentsList = comments;
         mInflater = LayoutInflater.from(mContext);
@@ -56,7 +57,7 @@ public class DetailCommentAdapter extends BaseAdapter{
             viewHolder = (ViewHolder) convertView.getTag();
         }
         //获取位置
-        DetailBean.DataBean.CommentsBean commentsBean = commentsList.get(position);
+        CommentBean.DataBean.CommentsBean commentsBean = commentsList.get(position);
         String avatar_url = commentsBean.getAuthor().getAvatar_url();
         String username = commentsBean.getAuthor().getUsername();
         String content = commentsBean.getContent();
@@ -84,4 +85,5 @@ public class DetailCommentAdapter extends BaseAdapter{
             mCommentTime = (TextView) view.findViewById(R.id.detail_comment_time);
         }
     }
+
 }

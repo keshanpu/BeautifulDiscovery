@@ -1,4 +1,4 @@
-package com.android.beautifulthing.DiscoverFragment.http;
+package com.android.beautifulthing.DiscoverFragment.tools;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,6 +12,7 @@ public class DateUtils {
 
     private static SimpleDateFormat sf = null;
     private static SimpleDateFormat sdf = null;
+    private static SimpleDateFormat stf = null;
     private static String mDate;
 
     /**
@@ -27,7 +28,7 @@ public class DateUtils {
     /**
      * 将字符串转为时间戳
      */
-    public static long getTimeStamp(String time) {
+    public static long getTimeStamp(String time) {// time==mDate
         sdf = new SimpleDateFormat("yyyy.MM.dd");
         Date date = new Date();
         try{
@@ -36,6 +37,17 @@ public class DateUtils {
             e.printStackTrace();
         }
         return date.getTime();
+    }
+
+    /**
+     * 时间戳转换成字符窜
+     * @param timeStamp 时间戳
+     * @return
+     */
+    public static String timeStampToDate(long timeStamp) {
+        Date d = new Date(timeStamp);
+        stf = new SimpleDateFormat("MM-dd");
+        return stf.format(d);
     }
 
 }
