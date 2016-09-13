@@ -65,10 +65,13 @@ public class CommonAdapter extends BaseAdapter {
         //向控件填值
         String imageurl = productsBean.getCover_images().get(0);
         Picasso.with(mContext).load(imageurl).into(viewHolder.mImageIv);
-        viewHolder.mNameTv.setText(productsBean.getName());
+        String productName = productsBean.getName();
+        viewHolder.mNameTv.setText(productName);
         String briefStr = productsBean.getBrief().toString();
-        String brief = briefStr.substring(briefStr.indexOf("\n")).trim();
-        viewHolder.mBriefTv.setText(brief);
+        String brief = briefStr.substring(productName.length()).trim();
+        if (brief != null) {
+            viewHolder.mBriefTv.setText(brief);
+        }
         String avatar_url = productsBean.getDesigner().getAvatar_url();
         String name = productsBean.getDesigner().getName();
         String label = productsBean.getDesigner().getLabel();

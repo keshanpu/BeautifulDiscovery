@@ -12,9 +12,12 @@ import android.widget.TextView;
 
 import com.android.beautifulthing.CommonActivity.DetailActivity;
 import com.android.beautifulthing.DiscoverFragment.bean.DailyBean;
+import com.android.beautifulthing.DiscoverFragment.tools.DateUtils;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -25,12 +28,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by ydy on 2016/9/6.
  */
 public class DailyAdapter extends BaseAdapter {
-
+    //flagX作为position=0的标示
+    boolean flagX = false, flagY = true;
     private Context mContext;
     private List<DailyBean.DataBean.ProductsBean> dataList;
     private LayoutInflater mInflater;
-
-
 
     public DailyAdapter(Context context, List<DailyBean.DataBean.ProductsBean> productsBeanList) {
         mContext = context;
@@ -40,7 +42,7 @@ public class DailyAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return dataList == null ? 0 : dataList.size();
+        return dataList == null ? 0 : dataList.size() + 1;
     }
 
     @Override
@@ -56,30 +58,74 @@ public class DailyAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder = null;
-        if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.subfragment_daily_item, parent, false);
-            viewHolder = new ViewHolder(convertView);
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+        HeadViewHolder headViewHolder = null;
+        View view = convertView;
+        view = null;
+        if (position == 0){
+            if(flagY){
+                flagY = false;
+                flagX = true;
+                view = null;
+            }
+            if (view == null){
+                view = mInflater.inflate(R.layout.subfragment_daily_head_view, parent, false);
+                headViewHolder = new HeadViewHolder(view);
+            }else {
+                headViewHolder = (HeadViewHolder) view.getTag();
+            }
+            String currentDate = DateUtils.getCurrentDate();
+            long TIMESTAMP = DateUtils.getTimeStamp(currentDate);
+            String date = DateUtils.timeStampToDate2(TIMESTAMP);
+            Date transDate = new Date(TIMESTAMP);
+            String week = DateUtils.DateToWeek(transDate);
+            headViewHolder.mHeadTime.setText(date + "," + week);
+            return view;
         }
-        //获取位置
-        DailyBean.DataBean.ProductsBean productsBean = dataList.get(position);
-        //向控件填值
-        String imageurl = productsBean.getCover_images().get(0);
-        Picasso.with(mContext).load(imageurl).into(viewHolder.mImageIv);
-        viewHolder.mNameTv.setText(productsBean.getName());
-        String briefStr = productsBean.getBrief().toString();
-        String brief = briefStr.substring(briefStr.indexOf("\n")).trim();
-        viewHolder.mBriefTv.setText(brief);
-        String avatar_url = productsBean.getDesigner().getAvatar_url();
-        String name = productsBean.getDesigner().getName();
-        String label = productsBean.getDesigner().getLabel();
-        Picasso.with(mContext).load(avatar_url).into(viewHolder.mAuthorimageTv);
-        viewHolder.mDesignerNameTv.setText(name);
-        viewHolder.mDesignerLabelTv.setText(label);
-        //点击事件向下界面传递的id
-        viewHolder.id = productsBean.getId();
-        return convertView;
+        view = null;
+        if ( position != 0){
+//            if(flagX){
+                flagX = false;
+                flagY = true;
+                view = null;
+//            }
+            if (view == null){
+                view = mInflater.inflate(R.layout.subfragment_daily_item, parent, false);
+                viewHolder = new ViewHolder(view);
+            } else {
+                viewHolder = (ViewHolder) view.getTag();
+            }
+            //获取位置
+            DailyBean.DataBean.ProductsBean productsBean = dataList.get(position - 1);
+            //向控件填值
+            String imageurl = productsBean.getCover_images().get(0);
+            Picasso.with(mContext).load(imageurl).into(viewHolder.mImageIv);
+            String productName = productsBean.getName();
+            viewHolder.mNameTv.setText(productName);
+            String briefStr = productsBean.getBrief().toString();
+            String brief = briefStr.substring(productName.length()).trim();
+            if (brief != null) {
+                viewHolder.mBriefTv.setText(brief);
+            }
+            String avatar_url = productsBean.getDesigner().getAvatar_url();
+            String name = productsBean.getDesigner().getName();
+            String label = productsBean.getDesigner().getLabel();
+            Picasso.with(mContext).load(avatar_url).into(viewHolder.mAuthorimageTv);
+            viewHolder.mDesignerNameTv.setText(name);
+            viewHolder.mDesignerLabelTv.setText(label);
+            //点击事件向下界面传递的id
+            viewHolder.id = productsBean.getId();
+        }
+        return view;
+    }
+
+    class HeadViewHolder{
+
+        private TextView mHeadTime;
+
+        public HeadViewHolder(View view) {
+            view.setTag(this);
+            mHeadTime = (TextView) view.findViewById(R.id.head_view);
+        }
     }
 
     class ViewHolder implements View.OnClickListener{

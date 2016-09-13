@@ -13,11 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.android.beautifulthing.CommonActivity.DetailActivity;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerWorksBean;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesgnerWorkPresent;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerWorkPresenter;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerWorkView;
-import com.android.beautifulthing.DiscoverFragment.DetailActivity;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
 

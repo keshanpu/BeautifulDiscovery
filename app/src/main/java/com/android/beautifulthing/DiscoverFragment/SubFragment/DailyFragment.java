@@ -32,6 +32,7 @@ public class DailyFragment extends Fragment implements IDailyView{
 
     private Context mContext;
     private PullToRefreshListView mRefreshListView;
+    private int index = 0;
 
 //    private String TIMESTAMP = "1472918400000";
     private long TIMESTAMP ;
@@ -93,6 +94,7 @@ public class DailyFragment extends Fragment implements IDailyView{
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        getTimeStamp();
                         productsList.clear();
                         dailyPresenter.getDatas(TIMESTAMP);
                         mHandler.sendEmptyMessageDelayed(1,1000);

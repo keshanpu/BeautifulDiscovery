@@ -119,6 +119,7 @@
                     android:background="#F7F7F7">
                     <de.hdodenhof.circleimageview.CircleImageView
                         xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:onClick="click"
                         android:id="@+id/detail_designer_image"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
@@ -143,6 +144,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="designer_label"/>
                     <Button
+                        android:onClick="click"
                         android:id="@+id/detail_add_attention_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -163,7 +165,6 @@
                     android:id="@+id/detail_gridview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
                     android:numColumns="2"/>
 
                 <LinearLayout
@@ -204,15 +205,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="45dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@color/white">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon_splash"
@@ -254,7 +255,6 @@
                 android:layout_marginLeft="16dp"
                 android:gravity="center"
                 android:text="品牌官网"
-                android:textSize="20sp"
                 android:textColor="#ffffff"
                 android:background="#F22844"/>
         </LinearLayout>
