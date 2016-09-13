@@ -24,6 +24,7 @@
                 android:id="@+id/daily_item_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="6dp"
                 android:layout_centerHorizontal="true"
                 android:layout_above="@+id/daily_item_brief_tv"
                 android:layout_marginBottom="10dp"
@@ -47,68 +48,68 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:paddingLeft="16dp"
+            android:paddingLeft="6dp"
             android:paddingRight="16dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:background="#000000"
+            android:background="#2C2C2C"
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/daily_item_authorimage_iv"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon_splash"
                 app:civ_border_width="2dp"
-                app:civ_border_color="#000000"/>
+                app:civ_border_color="#2C2C2C"/>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginLeft="16dp">
+                android:layout_marginLeft="6dp">
                 <TextView
                     android:id="@+id/daily_item_designer_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
+                    android:singleLine="true"
                     android:text="designer name"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"/>
                 <TextView
                     android:id="@+id/daily_item_designer_label"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
                     android:text="designer label"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"/>
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/daily_item_face_dislike"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/feed_dislike"/>
 
             <TextView
                 android:layout_width="1dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_gravity="center_vertical"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/daily_item_face_like"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/feed_like"/>
 

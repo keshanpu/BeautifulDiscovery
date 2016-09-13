@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CommonActivity.WelcomeActivity">
+        <activity android:name=".CommonActivity.WelcomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,6 +21,8 @@
 
         <activity android:name=".CommonActivity.DetailActivity" android:launchMode="singleTask" />
         <activity android:name=".CommonActivity.CommentsActivity" android:launchMode="singleTask"/>
+
+        <activity android:name=".CommonActivity.WebViewActivity"/>
 
     </application>
 

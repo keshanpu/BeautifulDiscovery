@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.beautifulthing.CommonActivity.DetailActivity;
 import com.android.beautifulthing.DiscoverFragment.bean.DetailBean;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
@@ -22,11 +23,13 @@ public class DetailGridAdapter extends BaseAdapter{
     private Context mContext;
     private List<DetailBean.DataBean.ReferProductsBean> referList;
     private LayoutInflater mInflater;
+    private DetailActivity detailActivity;
 
-    public DetailGridAdapter(Context context, List<DetailBean.DataBean.ReferProductsBean> refer_products) {
+    public DetailGridAdapter(Context context, List<DetailBean.DataBean.ReferProductsBean> refer_products, DetailActivity detailActivity) {
         mContext = context;
         referList = refer_products;
         mInflater = LayoutInflater.from(mContext);
+        this.detailActivity = detailActivity;
     }
 
     @Override
@@ -53,7 +56,6 @@ public class DetailGridAdapter extends BaseAdapter{
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        //
         viewHolder.id = referList.get(position).getId();
         String image_url = referList.get(position).getImages().get(0);
         Picasso.with(mContext).load(image_url).into(viewHolder.mImageIv);
@@ -73,10 +75,8 @@ public class DetailGridAdapter extends BaseAdapter{
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(mContext, "" + id, Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(mContext, DetailActivity.class);
-//            intent.putExtra("id", id);
-//            mContext.startActivity(intent);
+            //调用DetailActivity刷新
+            detailActivity.refleshView(id);
         }
     }
 }
