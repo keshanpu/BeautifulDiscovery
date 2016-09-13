@@ -11,24 +11,20 @@
                 <android.support.design.widget.CollapsingToolbarLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="10dp"
+                    android:minHeight="0dp"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed">
                     <RelativeLayout
                         android:id="@+id/activity_designerdetil_rl"
                         android:layout_width="match_parent"
-                        android:layout_height="600dp"
+                        android:layout_height="match_parent"
                         android:background="#ffffff"
-                        app:layout_collapseMode="pin">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@mipmap/ic_launcher" />
+                        app:layout_collapseMode="pin"
+                        app:layout_collapseParallaxMultiplier="0.5">
 
                         <android.support.v4.view.ViewPager
                             android:id="@+id/activity_designerdetil_viewpager"
                             android:layout_width="match_parent"
-                            android:layout_height="300dp" />
+                            android:layout_height="500dp" />
 
                         <LinearLayout
                             android:id="@+id/activity_designerdetil_indicator"
@@ -69,11 +65,17 @@
                                 android:layout_margin="5dp"
                                 android:src="@drawable/designerdetil_viewpager_seletcor" />
                         </LinearLayout>
-
+                        <TextView
+                            android:id="@+id/activity_designerdetil_blank_tv"
+                            android:layout_below="@id/activity_designerdetil_viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp" />
                         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/activity_designerdetil_iv"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
+
+                            android:layout_alignBottom="@+id/activity_designerdetil_blank_tv"
                             android:layout_centerInParent="true"
                             android:src="@mipmap/ic_launcher"
                             app:civ_border_width="2dp" />
@@ -116,16 +118,53 @@
                             android:layout_marginTop="10dp"
                             android:background="#000000"
                             android:text="@string/Focus_on"
-                            android:textColor="#ffffff" />
+                            android:textColor="#ffffff"
+                            android:onClick="click"/>
 
                         <TextView
                             android:id="@+id/activity_designerdetil_description"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/activity_designerdetil_btn"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
+                            android:ellipsize="end"
+                            android:maxLines="3"
+                            android:singleLine="false"
                             android:text="创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人" />
+                        <RelativeLayout
+                            android:id="@+id/show_more"
+                            android:layout_below="@id/activity_designerdetil_description"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:onClick="click"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:textSize="13sp"
+                                android:textColor="#999"
+                                android:layout_marginRight="34dip"
+                                android:text="更多" />
+
+                            <ImageView
+                                android:id="@+id/spread"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/icon_category" />
+
+                            <ImageView
+                                android:id="@+id/shrink_up"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/ic_circle_back_normal"
+                                android:visibility="gone" />
+                        </RelativeLayout>
                     </RelativeLayout>
                 </android.support.design.widget.CollapsingToolbarLayout>
             </android.support.design.widget.AppBarLayout>
@@ -146,72 +185,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
             </LinearLayout>
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/activity_designerdetil_r2"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:background="#000000"-->
-                <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-                <!--&gt;-->
-                <!--<com.android.beautifulthing.DesignerFragment.MyViewpager-->
-                    <!--android:id="@+id/activity_designerdetil_viewpager2"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_below="@+id/activity_designerdetil_radio_group" />-->
-
-                <!--<RadioGroup-->
-                    <!--android:id="@id/activity_designerdetil_radio_group"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="horizontal"-->
-                    <!--android:weightSum="5">-->
-
-                    <!--<RadioButton-->
-                        <!--android:id="@+id/activity_designerdetil_bottom_1"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:button="@null"-->
-                        <!--android:gravity="center_horizontal" />-->
-
-                    <!--<RadioButton-->
-                        <!--android:id="@+id/activity_designerdetil_bottom_2"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:button="@null"-->
-                        <!--android:gravity="center_horizontal"-->
-                        <!--android:text="作品"-->
-                        <!--android:textColor="#ffffff" />-->
-
-                    <!--<RadioButton-->
-                        <!--android:id="@+id/activity_designerdetil_bottom_3"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:button="@null"-->
-                        <!--android:gravity="center_horizontal"-->
-                        <!--android:text="旗舰门店"-->
-                        <!--android:textColor="#ffffff" />-->
-
-                    <!--<RadioButton-->
-                        <!--android:id="@+id/activity_designerdetil_bottom_4"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:button="@null"-->
-                        <!--android:gravity="center_horizontal"-->
-                        <!--android:text="线上购买"-->
-                        <!--android:textColor="#ffffff" />-->
-
-                <!--<RadioButton-->
-                    <!--android:id="@+id/activity_designerdetil_bottom_5"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:button="@null"-->
-                    <!--android:gravity="center_horizontal" />-->
-            <!--</RadioGroup>-->
-            <!--</RelativeLayout>-->
+    <ImageView
+        android:id="@+id/activity_designerdetil_back"
+        android:onClick="click"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_circle_back_normal" />
 
 </android.support.design.widget.CoordinatorLayout>

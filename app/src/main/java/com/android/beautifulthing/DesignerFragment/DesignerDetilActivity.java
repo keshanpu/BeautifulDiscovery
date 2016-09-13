@@ -11,20 +11,27 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.beautifulthing.DesignerFragment.Adapter.DesignerDetilAdapter;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
+import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.designerDetilFragment.BuyFragment;
 import com.android.beautifulthing.DesignerFragment.designerDetilFragment.ShopFragment;
 import com.android.beautifulthing.DesignerFragment.designerDetilFragment.WroksFragment;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerPresent;
+import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
+import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
 import com.android.beautifulthing.DesignerFragment.url.url;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
+import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
 
@@ -37,7 +44,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Administrator on 2016/9/6 0006.
  */
-public class DesignerDetilActivity extends AppCompatActivity implements IDesignerDetilView{
+public class DesignerDetilActivity extends AppCompatActivity implements IDesignerDetilView,IDesignerShop2View {
 //   private List<DesignerDetilBean.DataBean> designerDetilBeanList =new ArrayList<>();
     private  DesignerDetilBean.DataBean dataBean;
     private IDesignerPresent iDesignerPresent;
@@ -49,6 +56,8 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
     private List<Fragment>fragments = new ArrayList<>();
     private FragmentManager fragmentManager;
     private ViewPagerAdapter viewPagerAdapter;
+    private IDesignerShopPreseter iDesignerShopPreseter;
+
     @BindView(R.id.activity_designerdetil_btn)
     Button btn;
     @BindView(R.id.activity_designerdetil_iv)
@@ -69,62 +78,114 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
     ViewPager mViewpager2;
     @BindView(R.id.activity_designerdetil_tablayout)
     TabLayout mTabLayout;
-//    @BindView(R.id.activity_designerdetil_radio_group)
-//    RadioGroup mRadioGroup;
+    @BindView(R.id.show_more)
+    RelativeLayout mShowMore;
+    @BindView(R.id.spread)
+    ImageView mImageSpread;
+    @BindView(R.id.shrink_up)
+    ImageView mImageShrinkUp;
+
+    private static final int VIDEO_CONTENT_DESC_MAX_LINE = 3;// 默认展示最大行数3行
+    private static final int SHOW_CONTENT_NONE_STATE = 0;// 扩充
+    private static final int SHRINK_UP_STATE = 1;// 收起状态
+    private static final int SPREAD_STATE = 2;// 展开状态
+    private static int mState = SHRINK_UP_STATE;//默认收起状态
+    private List<DesignerShopBean.DataBean.ShopsBean> shops;
+    private List<String> titles = new ArrayList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_designerdetil);
         mContext = this ;
+        fragmentManager = getSupportFragmentManager();
         Intent intent =getIntent();
         designer_id = intent.getIntExtra("designer_id",0);
         Log.d("androidxx", "onCreate: "+designer_id);
+        //
         iDesignerPresent = new DesignerPresenter(this);
         iDesignerPresent.getDesignerList(url.DESTIGNER_DETAILS_URL,designer_id+"");
-        fragmentManager = getSupportFragmentManager();
-        initView();
+        //旗舰、在线购买
+        iDesignerShopPreseter = new DesignerShopPresnter(this);
+        iDesignerShopPreseter.getDesignerShopList(url.DESTIGNER_DETAILS2_URL,designer_id+"");
 
+
+
+        initView();
+    }
+
+    @Override
+    public void refreshListView2(DesignerShopBean designerShopBean) {
+        DesignerShopBean.DataBean data = designerShopBean.getData();
+        shops = data.getShops();
+        loadDatas();
+    }
+
+
+    private void initView() {
+        ButterKnife.bind(this);
+//        fragments.add(WroksFragment.newInstance(designer_id));
+//        fragments.add(new ShopFragment(designer_id));
+//        fragments.add(BuyFragment.newInstance(designer_id));
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        mTabLayout.setupWithViewPager(mViewpager2);
     }
 
     private void loadDatas() {
-        fragments.add(WroksFragment.newInstance());
-        fragments.add(ShopFragment.newInstance());
-        fragments.add(BuyFragment.newInstance());
+        if (shops.size() != 0) {
+            mTabLayout.removeAllTabs();
+//            mTabLayout.getTabAt(0).setText("作品");
+//            mTabLayout.getTabAt(1).setText("旗舰门面");
+//            mTabLayout.getTabAt(2).setText("线上购买");
+            titles.add("作品");
+            titles.add("旗舰门面");
+            titles.add("线上购买");
+            fragments.add(WroksFragment.newInstance(designer_id));
+            fragments.add(new ShopFragment(designer_id));
+            fragments.add(BuyFragment.newInstance(designer_id));
+
+        } else {
+            mTabLayout.removeAllTabs();
+            titles.add("作品");
+            titles.add("线上购买");
+            fragments.add(WroksFragment.newInstance(designer_id));
+            fragments.add(BuyFragment.newInstance(designer_id));
+        }
         viewPagerAdapter = new ViewPagerAdapter(fragmentManager);
         mViewpager2.setAdapter(viewPagerAdapter);
-
-
     }
 
-//    private void initListener() {
-//        mViewpager2.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//            switch (position){
-//                case 0 :
-//                    mRadioGroup.check(R.id.activity_designerdetil_bottom_2);
-//                    break;
-//                case 1:
-//                    mRadioGroup.check(R.id.activity_designerdetil_bottom_3);
-//                    break;
-//                case 2 :
-//                    mRadioGroup.check(R.id.activity_designerdetil_bottom_4);
-//                    break;
-//            }
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//
-//            }
-//        });
-//    }
-//
+    public void click(View view) {
+        switch (view.getId()){
+            case R.id.show_more:
+            {
+                if (mState == SPREAD_STATE){
+                    description.setMaxLines(VIDEO_CONTENT_DESC_MAX_LINE);
+                    description.requestLayout();
+                    mImageShrinkUp.setVisibility(View.GONE);
+                    mImageSpread.setVisibility(View.VISIBLE);
+                    mState = SHRINK_UP_STATE;
+                }else if(mState == SHRINK_UP_STATE){
+                    description.setMaxLines(Integer.MAX_VALUE);
+                    description.requestLayout();
+                    mImageShrinkUp.setVisibility(View.VISIBLE);
+                    mImageSpread.setVisibility(View.GONE);
+                    mState = SPREAD_STATE;
+                }
+                break;
+            }
+            case R.id.activity_designerdetil_back:
+                finish();
+                break;
+            case R.id.activity_designerdetil_btn:
+                Toast.makeText(DesignerDetilActivity.this, "123", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+    }
+
+
+
     class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         public ViewPagerAdapter(FragmentManager fm) {
@@ -141,37 +202,10 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
             return fragments == null ? 0 : fragments.size();
         }
 
-
-    }
-
-
-
-    private void initView() {
-        ButterKnife.bind(this);
-        loadDatas();
-        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
-        mTabLayout.setupWithViewPager(mViewpager2);
-            mTabLayout.getTabAt(0).setText("作品");
-            mTabLayout.getTabAt(1).setText("旗舰门面");
-            mTabLayout.getTabAt(2).setText("线上购买");
-
-//        mRadioGroup.check(R.id.activity_designerdetil_bottom_2);
-//        mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                switch (checkedId){
-//                    case R.id.activity_designerdetil_bottom_2:
-//                        mViewpager2.setCurrentItem(0);
-//                        break;
-//                    case R.id.activity_designerdetil_bottom_3:
-//                        mViewpager2.setCurrentItem(1);
-//                        break;
-//                    case R.id.activity_designerdetil_bottom_4:
-//                        mViewpager2.setCurrentItem(2);
-//                        break;
-//                }
-//            }
-//        });
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles.get(position);
+        }
     }
 
     @Override
@@ -219,4 +253,5 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         }
         view.setEnabled(true);
     }
+
 }

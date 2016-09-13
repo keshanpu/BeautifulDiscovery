@@ -5,13 +5,18 @@
 <RelativeLayout
     android:id="@+id/fragment_designer_main_item_rl"
     android:layout_width="match_parent"
-    android:layout_height="400dp">
+    android:layout_height="match_parent">
     <ImageView
         android:id="@+id/fragment_designer_main_item_iv"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher" />
+    <TextView
+        android:id="@+id/fragment_designer_main_item_blank_tv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/fragment_designer_main_item_iv"
+        android:layout_height="50dp" />
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/fragment_designer_main_item_iv2"
@@ -19,7 +24,8 @@
         android:layout_height="100dp"
         app:civ_border_width="2dp"
         android:src="@mipmap/ic_launcher"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:layout_alignBottom="@id/fragment_designer_main_item_blank_tv"/>
     <TextView
         android:id="@+id/fragment_designer_main_item_name"
         android:text="Maff pierce"

@@ -15,4 +15,12 @@ public interface IDesignerPresent {
     interface CallBack2{
         void success2(DesignerDetilBean designerDetilBean);
     }
+//    void getDesignerShopList(String base_Path2,String url_path2);
+//    interface CallBack3{
+//        void success3(DesignerShopBean designerShopBean);
+//    }
+//    void getDesignerWrokList(String base_Path3,String url_path3);
+//    interface CallBack4{
+//        void success4(DesignerWorksBean designerWorksBean);
+//    }
 }

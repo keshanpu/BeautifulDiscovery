@@ -33,4 +33,24 @@ public class HttpUtils_Designer {
         }
         return mHttpService_designer;
     }
+    public static HttpService_Designer create3(){
+        if (mHttpService_designer == null) {
+            Retrofit retrofit3 = new Retrofit.Builder()
+                    .baseUrl(url.DESIGNER_BASE_URL)
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .build();
+            mHttpService_designer = retrofit3.create(HttpService_Designer.class);
+        }
+        return mHttpService_designer;
+    }
+//    public static HttpService_Designer create4(){
+//        if (mHttpService_designer == null){
+//            Retrofit retrofit4 = new Retrofit.Builder()
+//                    .baseUrl(url.DESIGNER_BASE_URL)
+//                    .addConverterFactory(ScalarsConverterFactory.create())
+//                    .build();
+//            mHttpService_designer = retrofit4.create(HttpService_Designer.class);
+//        }
+//        return mHttpService_designer;
+//    }
 }
