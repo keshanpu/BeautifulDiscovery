@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.android.beautifulthing.DiscoverFragment.DetailActivity;
+import com.android.beautifulthing.CommonActivity.DetailActivity;
 import com.android.beautifulthing.DiscoverFragment.bean.CommonBean;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;

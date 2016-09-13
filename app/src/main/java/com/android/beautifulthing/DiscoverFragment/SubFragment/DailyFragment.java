@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 import com.android.beautifulthing.DiscoverFragment.adapter.DailyAdapter;
 import com.android.beautifulthing.DiscoverFragment.bean.DailyBean;
-import com.android.beautifulthing.DiscoverFragment.http.DateUtils;
+import com.android.beautifulthing.DiscoverFragment.tools.DateUtils;
 import com.android.beautifulthing.DiscoverFragment.presenter.IDailyPresenter;
 import com.android.beautifulthing.DiscoverFragment.presenter.impl.DailyPresenter;
 import com.android.beautifulthing.DiscoverFragment.view.IDailyView;

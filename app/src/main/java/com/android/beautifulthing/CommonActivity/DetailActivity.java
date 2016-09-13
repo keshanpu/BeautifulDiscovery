@@ -1,4 +1,4 @@
-package com.android.beautifulthing.DiscoverFragment;
+package com.android.beautifulthing.CommonActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -246,6 +246,9 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
                 break;
             case R.id.start_comment://进入评论界面
                 Toast.makeText(DetailActivity.this, "评论开始", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, CommentsActivity.class);
+                intent.putExtra("id", id);
+                mContext.startActivity(intent);
                 break;
             case R.id.website://品牌官网
                 Toast.makeText(DetailActivity.this, "品牌官网", Toast.LENGTH_SHORT).show();

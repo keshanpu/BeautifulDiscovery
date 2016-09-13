@@ -4,11 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/mtest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <RelativeLayout
+            android:id="@+id/mtest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#2C2C2C">
@@ -31,7 +28,6 @@
                 android:src="@drawable/icon_category"
                 android:background="#2C2C2C"/>
         </RelativeLayout>
-    </FrameLayout>
 
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/subfragment_common_refresh_listview"
