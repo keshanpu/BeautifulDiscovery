@@ -3,7 +3,6 @@ package com.android.beautifulthing.DesignerFragment.model.impl;
 import com.android.beautifulthing.DesignerFragment.Http_Designer.HttpUtils_Designer;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerBean;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
-import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.model.IDesignerModel;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
 
@@ -12,7 +11,7 @@ import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Administrator on 2016/9/6 0006.
+ * Created by Administrator on 2016/9/6
  */
 public class DesignerModel implements IDesignerModel {
     private DesignerPresenter designerPresenter;

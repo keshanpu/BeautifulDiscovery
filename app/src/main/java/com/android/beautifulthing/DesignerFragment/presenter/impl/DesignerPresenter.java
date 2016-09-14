@@ -9,7 +9,7 @@ import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerView;
 
 /**
- * Created by Administrator on 2016/9/6 0006.
+ * Created by Administrator on 2016/9/6
  */
 public class DesignerPresenter implements IDesignerPresent,
         IDesignerPresent.CallBack, IDesignerPresent.CallBack2

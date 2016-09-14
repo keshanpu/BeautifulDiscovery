@@ -166,10 +166,10 @@ public class DesignerAdapter  extends BaseAdapter{
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                            designer_id= (int) v.getTag(R.id.designer_id);
-                            Intent intent = new Intent(mContext,DesignerDetilActivity.class);
-                            intent.putExtra("designer_id",designer_id);
-                            mContext.startActivity(intent);
+                    designer_id= (int) v.getTag(R.id.designer_id);
+                    Intent intent = new Intent(mContext,DesignerDetilActivity.class);
+                    intent.putExtra("designer_id",designer_id);
+                    mContext.startActivity(intent);
                 }
             });
         }

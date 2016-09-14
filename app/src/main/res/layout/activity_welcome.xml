@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -35,6 +35,6 @@
         android:src="@drawable/power_by_zuimei"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="30dp"/>
 
 </RelativeLayout>

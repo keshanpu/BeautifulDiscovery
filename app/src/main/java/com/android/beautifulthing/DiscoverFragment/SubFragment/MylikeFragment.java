@@ -1,4 +1,4 @@
-package com.android.beautifulthing.DiscoverFragment.subfragment;
+package com.android.beautifulthing.DiscoverFragment.SubFragment;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -19,8 +19,7 @@ public class MylikeFragment extends Fragment {
     private Context mContext;
 
     public static MylikeFragment newInstance(){
-        MylikeFragment mylikeFragment = new MylikeFragment();
-        return mylikeFragment;
+        return new MylikeFragment();
     }
 
     @Override

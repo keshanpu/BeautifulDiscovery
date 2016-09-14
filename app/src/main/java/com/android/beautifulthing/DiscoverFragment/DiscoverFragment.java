@@ -18,7 +18,6 @@ import com.android.beautifulthing.DiscoverFragment.subfragment.BagFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.DailyFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.JewelryFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.MenFragment;
-import com.android.beautifulthing.DiscoverFragment.subfragment.MylikeFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.OthersFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.ShoesFragment;
 import com.android.beautifulthing.R;
@@ -78,7 +77,6 @@ public class DiscoverFragment extends Fragment {
      * 加载数据，这里的数据就是subFragment
      */
     private void loadDatas() {
-
         titles.add("Daily");
         titles.add("首饰");
         titles.add("包袋");
@@ -86,8 +84,6 @@ public class DiscoverFragment extends Fragment {
         titles.add("Men");
         titles.add("配饰");
         titles.add("其他");
-        titles.add("我喜欢的");
-
         fragments.add(DailyFragment.newInstance());
         fragments.add(JewelryFragment.newInstance());
         fragments.add(BagFragment.newInstance());
@@ -95,7 +91,8 @@ public class DiscoverFragment extends Fragment {
         fragments.add(MenFragment.newInstance());
         fragments.add(AccessoryFragment.newInstance());
         fragments.add(OthersFragment.newInstance());
-        fragments.add(MylikeFragment.newInstance());
+//        titles.add("我喜欢的");
+//        fragments.add(MylikeFragment.newInstance());
     }
 
     class MyPagerAdapter extends FragmentStatePagerAdapter{

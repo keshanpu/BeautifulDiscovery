@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ydy on 2016/9/5.
+ * Created by ydy on 2016/9/5
  */
 public class DesignerFragment extends Fragment implements IDesignerView {
     private Context mContext;
@@ -52,8 +52,6 @@ public class DesignerFragment extends Fragment implements IDesignerView {
        View view = LayoutInflater.from(mContext).inflate(R.layout.fragment_designer_main,container,false);
         mPullToRefresh = (PullToRefreshListView) view.findViewById(R.id.fragment_designer_main_mrefreshlv);
         mPullToRefresh.setMode(PullToRefreshBase.Mode.BOTH);
-//        View footView = LayoutInflater.from(mContext).inflate(R.layout.fragment_designer_main_footview,null,false);
-//        mPullToRefresh.getRefreshableView().addFooterView(footView);
         initListener();
         designerAdapter = new DesignerAdapter(mContext,designersBeanLists);
         mPullToRefresh.setAdapter(designerAdapter);
@@ -81,10 +79,10 @@ public class DesignerFragment extends Fragment implements IDesignerView {
     private void initDatas() {
         iDesignerPresent.getDesignerList(page,30);
     }
+
     @Override
     public void refreshListView(List<DesignerBean.DataBean.DesignersBean> designersBeanList) {
         designersBeanLists.addAll(designersBeanList);
-        Log.d("=====", "refreshListView: "+designersBeanLists.toString());
         designerAdapter.notifyDataSetChanged();
     }
 

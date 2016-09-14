@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
@@ -43,7 +41,7 @@ import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by ydy on 2016/9/6.
+ * Created by ydy on 2016/9/6
  */
 public class DetailActivity extends AppCompatActivity implements IDetailView{
 
@@ -182,6 +180,17 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
         mListView.setAdapter(mDetailListAdapter);
         //评论ListView
         mCommentListView = (MyListView) findViewById(R.id.detail_comments_listview);
+        View footerView = LayoutInflater.from(mContext).inflate(R.layout.detail_comments_foot_view, null, false);
+        mCommentListView.addFooterView(footerView);
+        LinearLayout linearLayout = (LinearLayout) footerView.findViewById(R.id.watch_all_comments);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, CommentsActivity.class);
+                intent.putExtra("id", id);
+                mContext.startActivity(intent);
+            }
+        });
         mDetailCommentAdapter = new DetailCommentAdapter(mContext, comments);
         mCommentListView.setAdapter(mDetailCommentAdapter);
         //GridView
@@ -284,11 +293,11 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
                 Toast.makeText(DetailActivity.this, "谢谢喔~", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.detail_designer_image://跳转详情子页
-                //TODO
-//                Intent trans = new Intent(mContext, );
-//                trans.putExtra("id", transId);
-//                mContext.startActivity(trans);
-                Toast.makeText(DetailActivity.this, "" + transId, Toast.LENGTH_SHORT).show();
+                //  TODO
+//                Intent trans = new Intent(DetailActivity.this, DesignerDetilActivity.class);
+//                trans.putExtra("designer_id", transId);
+//                DetailActivity.this.startActivity(trans);
+                Toast.makeText(DetailActivity.this, ""+transId, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.detail_add_attention_btn:// +关注
                 if (flag2){

@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,7 +29,6 @@ import com.android.beautifulthing.DesignerFragment.presenter.IDesignerPresent;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
-import com.android.beautifulthing.DesignerFragment.url.url;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
@@ -43,11 +41,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Administrator on 2016/9/6 0006.
+ * Created by Administrator on 2016/9/6
  */
 public class DesignerDetilActivity extends AppCompatActivity implements IDesignerDetilView,IDesignerShop2View {
+
 //   private List<DesignerDetilBean.DataBean> designerDetilBeanList =new ArrayList<>();
     private PopupWindow mPWindow;
+
     private  DesignerDetilBean.DataBean dataBean;
     private IDesignerPresent iDesignerPresent;
     private int designer_id;
@@ -101,18 +101,14 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         setContentView(R.layout.activity_designerdetil);
         mContext = this ;
         fragmentManager = getSupportFragmentManager();
-        Intent intent =getIntent();
+        Intent intent = getIntent();
         designer_id = intent.getIntExtra("designer_id",0);
-        Log.d("androidxx", "onCreate: "+designer_id);
         //
         iDesignerPresent = new DesignerPresenter(this);
         iDesignerPresent.getDesignerList(url.DESTIGNER_DETAILS_URL,designer_id+"");
         //旗舰、在线购买
         iDesignerShopPreseter = new DesignerShopPresnter(this);
         iDesignerShopPreseter.getDesignerShopList(url.DESTIGNER_DETAILS2_URL,designer_id+"");
-
-
-
         initView();
     }
 
@@ -123,12 +119,8 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         loadDatas();
     }
 
-
     private void initView() {
         ButterKnife.bind(this);
-//        fragments.add(WroksFragment.newInstance(designer_id));
-//        fragments.add(new ShopFragment(designer_id));
-//        fragments.add(BuyFragment.newInstance(designer_id));
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mTabLayout.setupWithViewPager(mViewpager2);
     }
@@ -136,16 +128,12 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
     private void loadDatas() {
         if (shops.size() != 0) {
             mTabLayout.removeAllTabs();
-//            mTabLayout.getTabAt(0).setText("作品");
-//            mTabLayout.getTabAt(1).setText("旗舰门面");
-//            mTabLayout.getTabAt(2).setText("线上购买");
             titles.add("作品");
             titles.add("旗舰门面");
             titles.add("线上购买");
             fragments.add(WroksFragment.newInstance(designer_id));
             fragments.add(new ShopFragment(designer_id));
             fragments.add(BuyFragment.newInstance(designer_id));
-
         } else {
             mTabLayout.removeAllTabs();
             titles.add("作品");
@@ -197,8 +185,6 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         }
     }
 
-
-
     class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         public ViewPagerAdapter(FragmentManager fm) {
@@ -223,18 +209,13 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
 
     @Override
     public void refreshListView(DesignerDetilBean designerDetilBean) {
-//        designerDetilBeanList.add(designerDetilBean.getData());
         dataBean = designerDetilBean.getData();
-//        Log.d("andoridxx", "refreshListView: "+designerDetilBeanList.toString());
-//        name.setText(designerDetilBeanList.get(0).getName());
-        Log.d("andoridxx", "refreshListView: "+dataBean.toString());
         name.setText(dataBean.getName());
         label.setText(dataBean.getLabel());
         cocept.setText(dataBean.getConcept());
         description.setText(dataBean.getDescription());
         Picasso.with(mContext).load(dataBean.getAvatar_url()).into(imageView);
         introduce_images = dataBean.getIntroduce_images();
-        Log.d("===", "refreshListView: "+introduce_images);
         designerDetilAdapter = new DesignerDetilAdapter(introduce_images,this);
         mViewPager.setAdapter(designerDetilAdapter);
         childCount = indicator.getChildCount();

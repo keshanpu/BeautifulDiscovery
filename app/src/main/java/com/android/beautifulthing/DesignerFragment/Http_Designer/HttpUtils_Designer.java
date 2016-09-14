@@ -1,6 +1,5 @@
 package com.android.beautifulthing.DesignerFragment.Http_Designer;
 
-import com.android.beautifulthing.DesignerFragment.url.url;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -8,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
- * Created by Administrator on 2016/9/6 0006.
+ * Created by Administrator on 2016/9/6
  */
 public class HttpUtils_Designer {
     private static HttpService_Designer mHttpService_designer;
@@ -43,14 +42,5 @@ public class HttpUtils_Designer {
         }
         return mHttpService_designer;
     }
-//    public static HttpService_Designer create4(){
-//        if (mHttpService_designer == null){
-//            Retrofit retrofit4 = new Retrofit.Builder()
-//                    .baseUrl(url.DESIGNER_BASE_URL)
-//                    .addConverterFactory(ScalarsConverterFactory.create())
-//                    .build();
-//            mHttpService_designer = retrofit4.create(HttpService_Designer.class);
-//        }
-//        return mHttpService_designer;
-//    }
+
 }
