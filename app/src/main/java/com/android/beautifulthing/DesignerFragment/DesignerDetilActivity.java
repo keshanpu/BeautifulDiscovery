@@ -29,6 +29,7 @@ import com.android.beautifulthing.DesignerFragment.presenter.IDesignerPresent;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
+import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
@@ -105,10 +106,10 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         designer_id = intent.getIntExtra("designer_id",0);
         //
         iDesignerPresent = new DesignerPresenter(this);
-        iDesignerPresent.getDesignerList(url.DESTIGNER_DETAILS_URL,designer_id+"");
+        iDesignerPresent.getDesignerList(DataUrl.DESTIGNER_DETAILS_URL,designer_id+"");
         //旗舰、在线购买
         iDesignerShopPreseter = new DesignerShopPresnter(this);
-        iDesignerShopPreseter.getDesignerShopList(url.DESTIGNER_DETAILS2_URL,designer_id+"");
+        iDesignerShopPreseter.getDesignerShopList(DataUrl.DESTIGNER_DETAILS2_URL,designer_id+"");
         initView();
     }
 

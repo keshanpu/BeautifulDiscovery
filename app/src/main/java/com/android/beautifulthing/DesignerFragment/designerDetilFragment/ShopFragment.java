@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
+import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
@@ -47,7 +48,7 @@ public class ShopFragment extends Fragment implements IDesignerShop2View {
         super.onCreate(savedInstanceState);
         mContext = getContext();
         IDesignerShopPreseter iDesignerPresent = new DesignerShopPresnter(this);
-        iDesignerPresent.getDesignerShopList(url.DESTIGNER_DETAILS2_URL,id+"");
+        iDesignerPresent.getDesignerShopList(DataUrl.DESTIGNER_DETAILS2_URL,id+"");
     }
 
     @Nullable

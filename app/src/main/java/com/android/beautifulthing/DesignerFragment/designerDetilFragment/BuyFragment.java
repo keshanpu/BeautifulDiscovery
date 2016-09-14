@@ -17,6 +17,7 @@ import com.android.beautifulthing.CommonActivity.WebViewActivity;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
+import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
@@ -54,7 +55,7 @@ public class BuyFragment extends Fragment  implements IDesignerShop2View {
         Bundle arguments = getArguments();
         id = arguments.getInt("id");
         iDesignerPresent = new DesignerShopPresnter(this);
-        iDesignerPresent.getDesignerShopList(url.DESTIGNER_DETAILS2_URL,""+id);
+        iDesignerPresent.getDesignerShopList(DataUrl.DESTIGNER_DETAILS2_URL,""+id);
 
     }
 

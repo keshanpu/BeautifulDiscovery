@@ -1,4 +1,4 @@
-package com.android.beautifulthing.DiscoverFragment.SubFragment;
+package com.android.beautifulthing.DiscoverFragment.subfragment;
 
 import android.app.ProgressDialog;
 import android.content.res.TypedArray;
