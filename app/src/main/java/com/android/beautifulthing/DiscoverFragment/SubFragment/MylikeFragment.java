@@ -19,8 +19,7 @@ public class MylikeFragment extends Fragment {
     private Context mContext;
 
     public static MylikeFragment newInstance(){
-        MylikeFragment mylikeFragment = new MylikeFragment();
-        return mylikeFragment;
+        return new MylikeFragment();
     }
 
     @Override

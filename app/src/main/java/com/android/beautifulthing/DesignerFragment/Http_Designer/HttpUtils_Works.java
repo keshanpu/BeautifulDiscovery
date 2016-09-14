@@ -1,6 +1,6 @@
 package com.android.beautifulthing.DesignerFragment.Http_Designer;
 
-import com.android.beautifulthing.DesignerFragment.url.url;
+import com.android.beautifulthing.DesignerFragment.Url.url;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;

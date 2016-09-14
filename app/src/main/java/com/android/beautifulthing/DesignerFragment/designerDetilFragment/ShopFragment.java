@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.beautifulthing.DesignerFragment.Url.url;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
-import com.android.beautifulthing.DesignerFragment.url.url;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
@@ -23,14 +23,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Administrator on 2016/9/7 0007.
+ * Created by Administrator on 2016/9/7
  */
 public class ShopFragment extends Fragment implements IDesignerShop2View {
-    private DesignerShopBean.DataBean dataBean;
-    private IDesignerShopPreseter iDesignerPresent;
+
     private Context mContext;
     private int id;
-//    private DesignerDetilActivity designerDetilActivity;
 
     public ShopFragment(int id) {
         this.id = id;
@@ -44,26 +42,12 @@ public class ShopFragment extends Fragment implements IDesignerShop2View {
     TextView name;
     @BindView(R.id.shopfragment_address)
     TextView address;
-//    public static ShopFragment newInstance(int id){
-//        ShopFragment shopFragment = new ShopFragment();
-//        Bundle bundle = new Bundle();
-//        bundle.putInt("id",id);
-//        shopFragment.setArguments(bundle);
-//        return  shopFragment;
-//    }
-//    public ShopFragment (int id, DesignerDetilActivity designerDetilActivity){
-//        this.id = id;
-//        this .designerDetilActivity = designerDetilActivity;
-//    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getContext();
-//        Bundle arguments = getArguments();
-//        id =arguments.getInt("id");
-//        Log.d("++", "onCreate: "+id);
-        iDesignerPresent = new DesignerShopPresnter(this);
+        IDesignerShopPreseter iDesignerPresent = new DesignerShopPresnter(this);
         iDesignerPresent.getDesignerShopList(url.DESTIGNER_DETAILS2_URL,id+"");
     }
 
@@ -78,7 +62,7 @@ public class ShopFragment extends Fragment implements IDesignerShop2View {
 
     @Override
     public void refreshListView2(DesignerShopBean designerShopBean) {
-        dataBean =designerShopBean.getData();
+        DesignerShopBean.DataBean dataBean =designerShopBean.getData();
         dataBean.getShop_image();
         Log.d("++", "refreshListView: "+dataBean.toString());
         if (!dataBean.getShop_image().isEmpty()){

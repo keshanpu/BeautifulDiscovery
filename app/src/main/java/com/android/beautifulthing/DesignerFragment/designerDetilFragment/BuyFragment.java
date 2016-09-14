@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.beautifulthing.DesignerFragment.Url.url;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
-import com.android.beautifulthing.DesignerFragment.url.url;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
@@ -22,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Administrator on 2016/9/7 0007.
+ * Created by Administrator on 2016/9/7 0007
  */
 public class BuyFragment extends Fragment  implements IDesignerShop2View {
     private Context mContext;

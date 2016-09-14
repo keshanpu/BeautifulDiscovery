@@ -1,5 +1,6 @@
 package com.android.beautifulthing.DiscoverFragment.subfragment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -15,9 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.beautifulthing.DiscoverFragment.adapter.CategoryBagAdapter;
 import com.android.beautifulthing.DiscoverFragment.adapter.CategoryShoesAdapter;
@@ -32,6 +35,7 @@ import com.android.beautifulthing.DiscoverFragment.presenter.impl.CommonPresente
 import com.android.beautifulthing.DiscoverFragment.view.ICategoryView;
 import com.android.beautifulthing.DiscoverFragment.view.ICommonView;
 import com.android.beautifulthing.R;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -67,18 +71,23 @@ public class ShoesFragment extends Fragment implements ICommonView, ICategoryVie
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             mRefreshListView.onRefreshComplete();
+            mCategoryAdapter.notifyDataSetChanged();
+            mCommonAdapter.notifyDataSetChanged();
         }
     };
+    private ProgressDialog mProgressDialog;
 
     public static ShoesFragment newInstance(){
-        ShoesFragment shoesFragment = new ShoesFragment();
-        return shoesFragment;
+        return new ShoesFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getContext();
+        mProgressDialog = new ProgressDialog(mContext);
+        mProgressDialog.setMessage("努力加载中...");
+        mProgressDialog.show();
     }
 
     @Nullable
@@ -183,10 +192,32 @@ public class ShoesFragment extends Fragment implements ICommonView, ICategoryVie
 
     //主界面数据返回
     @Override
-    public void dataResult(CommonBean.DataBean dataBean) {
+    public void dataResult(final CommonBean.DataBean dataBean) {
         products.addAll(dataBean.getProducts());
+        mProgressDialog.dismiss();
         mCommonAdapter = new CommonAdapter(mContext, products);
         mRefreshListView.setAdapter(mCommonAdapter);
+        //刷新事件
+        mRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
+        mRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+                products.clear();
+                commonPresenter.getDatas(CATEGORY_TAG, PAGER, PAGER_SIZE);
+                mHandler.sendEmptyMessageDelayed(1,1000);
+            }
+
+            @Override
+            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+                if (dataBean.getHas_next() != 0){
+                    PAGER += 1;
+                    commonPresenter.getDatas(CATEGORY_TAG, PAGER, PAGER_SIZE);
+                } else {
+                    Toast.makeText(mContext, "没有更多数据了", Toast.LENGTH_SHORT).show();
+                }
+                mHandler.sendEmptyMessageDelayed(1,1000);
+            }
+        });
     }
 
     //分类数据返回

@@ -1,5 +1,6 @@
 package com.android.beautifulthing.DiscoverFragment.subfragment;
 
+import android.app.ProgressDialog;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -25,16 +26,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ydy on 2016/9/6.
+ * Created by ydy on 2016/9/6
  * SubFragment---Daily
  */
 public class DailyFragment extends Fragment implements IDailyView{
 
     private Context mContext;
     private PullToRefreshListView mRefreshListView;
-    private int index = 0;
-
-//    private String TIMESTAMP = "1472918400000";
     private long TIMESTAMP ;
     private IDailyPresenter dailyPresenter;
     private DailyAdapter mDailyAdapter;
@@ -49,16 +47,19 @@ public class DailyFragment extends Fragment implements IDailyView{
             mDailyAdapter.notifyDataSetChanged();
         }
     };
+    private ProgressDialog mProgressDialog;
 
     public static DailyFragment newInstance(){
-        DailyFragment dailyFragment = new DailyFragment();
-        return dailyFragment;
+        return new DailyFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getContext();
+        mProgressDialog = new ProgressDialog(mContext);
+        mProgressDialog.setMessage("努力加载中...");
+        mProgressDialog.show();
         getTimeStamp();
     }
 
@@ -67,10 +68,18 @@ public class DailyFragment extends Fragment implements IDailyView{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.subfragment_daily_main_view, container, false);
         mRefreshListView = (PullToRefreshListView) view.findViewById(R.id.subfragment_daily_refresh_listview);
+        //加载数据
+        initDatas();
+        return view;
+    }
+
+    /**
+     * 加载数据
+     */
+    private void initDatas() {
         //数据源
         dailyPresenter = new DailyPresenter(this);
         dailyPresenter.getDatas(TIMESTAMP);
-        return view;
     }
 
     /**
@@ -84,6 +93,7 @@ public class DailyFragment extends Fragment implements IDailyView{
     @Override
     public void dataResult(List<DailyBean.DataBean.ProductsBean> productsBeanList) {
         productsList.addAll(productsBeanList);
+        mProgressDialog.dismiss();
         mDailyAdapter = new DailyAdapter(mContext, productsList);
         mRefreshListView.setAdapter(mDailyAdapter);
         //刷新事件
@@ -94,7 +104,6 @@ public class DailyFragment extends Fragment implements IDailyView{
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        getTimeStamp();
                         productsList.clear();
                         dailyPresenter.getDatas(TIMESTAMP);
                         mHandler.sendEmptyMessageDelayed(1,1000);
