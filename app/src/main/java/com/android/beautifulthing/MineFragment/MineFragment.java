@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.beautifulthing.DesignerFragment.MyPopWindow;
 import com.android.beautifulthing.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -29,6 +31,7 @@ public class MineFragment extends Fragment {
     private RelativeLayout attention;
     private RelativeLayout wish;
     private RelativeLayout beautiful;
+    private PopupWindow mPWindow;
 
     public static MineFragment newInstance(){
         MineFragment mineFragment = new MineFragment();
@@ -61,6 +64,93 @@ public class MineFragment extends Fragment {
             }
         });
         mset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext,SettingActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+        mLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPWindow!=null){
+                    if (mPWindow.isShowing()){
+                        mPWindow.dismiss();
+                    }else {
+//                        initPopupWindow();
+                        MyPopWindow.initPopupWindow(mContext);
+                    }
+                }else {
+//                    initPopupWindow();
+                    MyPopWindow.initPopupWindow(mContext);
+                }
+            }
+        });
+        mtvL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPWindow!=null){
+                    if (mPWindow.isShowing()){
+                        mPWindow.dismiss();
+                    }else {
+//                        initPopupWindow();
+                        MyPopWindow.initPopupWindow(mContext);
+                    }
+                }else {
+//                    initPopupWindow();
+                    MyPopWindow.initPopupWindow(mContext);
+                }
+            }
+        });
+        collection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPWindow!=null){
+                    if (mPWindow.isShowing()){
+                        mPWindow.dismiss();
+                    }else {
+//                        initPopupWindow();
+                        MyPopWindow.initPopupWindow(mContext);
+                    }
+                }else {
+//                    initPopupWindow();
+                    MyPopWindow.initPopupWindow(mContext);
+                }
+            }
+        });
+        attention.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPWindow!=null){
+                    if (mPWindow.isShowing()){
+                        mPWindow.dismiss();
+                    }else {
+//                        initPopupWindow();
+                        MyPopWindow.initPopupWindow(mContext);
+                    }
+                }else {
+//                    initPopupWindow();
+                    MyPopWindow.initPopupWindow(mContext);
+                }
+            }
+        });
+        wish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPWindow!=null){
+                    if (mPWindow.isShowing()){
+                        mPWindow.dismiss();
+                    }else {
+//                        initPopupWindow();
+                        MyPopWindow.initPopupWindow(mContext);
+                    }
+                }else {
+//                    initPopupWindow();
+                    MyPopWindow.initPopupWindow(mContext);
+                }
+            }
+        });
+        beautiful.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

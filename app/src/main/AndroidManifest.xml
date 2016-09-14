@@ -26,6 +26,8 @@
         <activity android:name=".MineFragment.FeedBackdetilActivity"/>
         <activity android:name=".DesignerFragment.DesignerDetilActivity"/>
         <activity android:name=".MineFragment.FeedBackActivity"/>
+        <activity android:name=".MineFragment.AboutUsActivity"/>
+        <activity android:name=".MineFragment.SettingActivity"/>
 
     </application>
 

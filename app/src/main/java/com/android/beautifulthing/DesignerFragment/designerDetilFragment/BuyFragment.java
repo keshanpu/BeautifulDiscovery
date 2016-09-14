@@ -1,15 +1,19 @@
 package com.android.beautifulthing.DesignerFragment.designerDetilFragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.beautifulthing.CommonActivity.WebViewActivity;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
@@ -34,6 +38,8 @@ public class BuyFragment extends Fragment  implements IDesignerShop2View {
     ImageView imageView;
     @BindView(R.id.buyfragment_name)
     TextView name;
+    @BindView(R.id.buyfragment_rl)
+    RelativeLayout mRl;
     public static BuyFragment newInstance(int id){
         BuyFragment buyFragment = new BuyFragment();
         Bundle bundle = new Bundle();
@@ -65,7 +71,18 @@ public class BuyFragment extends Fragment  implements IDesignerShop2View {
     public void refreshListView2(DesignerShopBean designerShopBean) {
         dataBean = designerShopBean.getData();
         Picasso.with(mContext).load(dataBean.getOnline_shop_image()).into(imageView);
-        name.setText(dataBean.getOnline_shops().get(0).getName());
+        final String shop_name = dataBean.getOnline_shops().get(0).getName();
+        name.setText(shop_name);
         shopUrl = dataBean.getOnline_shops().get(0).getLink_url();
+        mRl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, WebViewActivity.class);
+                intent.putExtra("shop_url",shopUrl);
+                Log.d("TAG123456", "onClick: "+shopUrl.toString());
+                intent.putExtra("shop_name",shop_name);
+                mContext.startActivity(intent);
+            }
+        });
     }
 }

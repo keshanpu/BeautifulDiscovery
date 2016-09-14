@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ import butterknife.ButterKnife;
  */
 public class DesignerDetilActivity extends AppCompatActivity implements IDesignerDetilView,IDesignerShop2View {
 //   private List<DesignerDetilBean.DataBean> designerDetilBeanList =new ArrayList<>();
+    private PopupWindow mPWindow;
     private  DesignerDetilBean.DataBean dataBean;
     private IDesignerPresent iDesignerPresent;
     private int designer_id;
@@ -179,7 +181,18 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
                 break;
             case R.id.activity_designerdetil_btn:
                 Toast.makeText(DesignerDetilActivity.this, "123", Toast.LENGTH_SHORT).show();
-                break;
+                if (mPWindow!=null){
+                if (mPWindow.isShowing()){
+                    mPWindow.dismiss();
+                }else {
+//                        initPopupWindow();
+                    MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+                }
+            }else {
+//                    initPopupWindow();
+                MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+            }
+            break;
 
         }
     }
