@@ -10,17 +10,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.beautifulthing.DesignerFragment.Adapter.DesignerDetilAdapter;
-import com.android.beautifulthing.DesignerFragment.Url.url;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.designerDetilFragment.BuyFragment;
@@ -30,6 +29,7 @@ import com.android.beautifulthing.DesignerFragment.presenter.IDesignerPresent;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
+import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
 import com.android.beautifulthing.R;
@@ -45,6 +45,9 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016/9/6
  */
 public class DesignerDetilActivity extends AppCompatActivity implements IDesignerDetilView,IDesignerShop2View {
+
+//   private List<DesignerDetilBean.DataBean> designerDetilBeanList =new ArrayList<>();
+    private PopupWindow mPWindow;
 
     private  DesignerDetilBean.DataBean dataBean;
     private IDesignerPresent iDesignerPresent;
@@ -103,10 +106,10 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         designer_id = intent.getIntExtra("designer_id",0);
         //
         iDesignerPresent = new DesignerPresenter(this);
-        iDesignerPresent.getDesignerList(url.DESTIGNER_DETAILS_URL,designer_id+"");
+        iDesignerPresent.getDesignerList(DataUrl.DESTIGNER_DETAILS_URL,designer_id+"");
         //旗舰、在线购买
         iDesignerShopPreseter = new DesignerShopPresnter(this);
-        iDesignerShopPreseter.getDesignerShopList(url.DESTIGNER_DETAILS2_URL,designer_id+"");
+        iDesignerShopPreseter.getDesignerShopList(DataUrl.DESTIGNER_DETAILS2_URL,designer_id+"");
         initView();
     }
 
@@ -167,7 +170,18 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
                 break;
             case R.id.activity_designerdetil_btn:
                 Toast.makeText(DesignerDetilActivity.this, "123", Toast.LENGTH_SHORT).show();
-                break;
+                if (mPWindow!=null){
+                if (mPWindow.isShowing()){
+                    mPWindow.dismiss();
+                }else {
+//                        initPopupWindow();
+                    MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+                }
+            }else {
+//                    initPopupWindow();
+                MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+            }
+            break;
 
         }
     }

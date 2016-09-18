@@ -1,15 +1,14 @@
 package com.android.beautifulthing.DiscoverFragment.subfragment;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
-import android.content.Context;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.beautifulthing.DiscoverFragment.adapter.CategoryAccAdapter;
-import com.android.beautifulthing.DiscoverFragment.adapter.CategoryBagAdapter;
 import com.android.beautifulthing.DiscoverFragment.adapter.CommonAdapter;
 import com.android.beautifulthing.DiscoverFragment.bean.CategoryBean;
 import com.android.beautifulthing.DiscoverFragment.bean.CommonBean;

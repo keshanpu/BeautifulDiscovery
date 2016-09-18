@@ -18,7 +18,6 @@ import com.android.beautifulthing.DiscoverFragment.subfragment.BagFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.DailyFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.JewelryFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.MenFragment;
-import com.android.beautifulthing.DiscoverFragment.subfragment.MylikeFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.OthersFragment;
 import com.android.beautifulthing.DiscoverFragment.subfragment.ShoesFragment;
 import com.android.beautifulthing.R;

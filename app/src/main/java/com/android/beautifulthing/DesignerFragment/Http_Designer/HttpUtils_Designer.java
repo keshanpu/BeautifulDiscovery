@@ -1,7 +1,7 @@
 package com.android.beautifulthing.DesignerFragment.Http_Designer;
 
 
-import com.android.beautifulthing.DesignerFragment.Url.url;
+import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -16,7 +16,7 @@ public class HttpUtils_Designer {
     public static HttpService_Designer create(){
         if (mHttpService_designer == null) {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(url.DESIGNER_BASE_URL)
+                    .baseUrl(DataUrl.DESIGNER_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build();
@@ -27,7 +27,7 @@ public class HttpUtils_Designer {
     public static HttpService_Designer create2(){
         if (mHttpService_designer == null) {
             Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl(url.DESIGNER_BASE_URL)
+                    .baseUrl(DataUrl.DESIGNER_BASE_URL)
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .build();
             mHttpService_designer = retrofit2.create(HttpService_Designer.class);
@@ -37,7 +37,7 @@ public class HttpUtils_Designer {
     public static HttpService_Designer create3(){
         if (mHttpService_designer == null) {
             Retrofit retrofit3 = new Retrofit.Builder()
-                    .baseUrl(url.DESIGNER_BASE_URL)
+                    .baseUrl(DataUrl.DESIGNER_BASE_URL)
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .build();
             mHttpService_designer = retrofit3.create(HttpService_Designer.class);

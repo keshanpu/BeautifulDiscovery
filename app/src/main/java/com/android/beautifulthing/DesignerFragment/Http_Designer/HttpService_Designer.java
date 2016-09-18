@@ -1,9 +1,10 @@
 package com.android.beautifulthing.DesignerFragment.Http_Designer;
 
-import com.android.beautifulthing.DesignerFragment.Url.url;
+
 import com.android.beautifulthing.DesignerFragment.bean.DesignerBean;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
+import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -15,7 +16,7 @@ import rx.Observable;
  */
 public interface HttpService_Designer {
 
-    @GET(url.DESIGNER_GET_URL)
+    @GET(DataUrl.DESIGNER_GET_URL)
     Observable<DesignerBean> queryDesigner(
             @Query("page")int page,
             @Query("page_size")int size);

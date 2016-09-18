@@ -107,6 +107,7 @@
             android:layout_below="@id/fragment_mine_main_rl2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="click1"
             android:background="#ffffff">
             <TextView
                 android:id="@+id/fragment_mine_main_line2"
@@ -185,6 +186,7 @@
             android:layout_below="@id/fragment_mine_main_rl5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="click"
             android:background="#ffffff">
             <TextView
                 android:id="@+id/fragment_mine_main_line5"
