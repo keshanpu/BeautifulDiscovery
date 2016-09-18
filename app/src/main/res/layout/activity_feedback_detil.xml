@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
+
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:contentInsetStart="0dp"
+        android:background="#000000"
         app:contentInsetLeft="0dp"
-        android:background="#000000">
+        app:contentInsetStart="0dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
             <ImageButton
                 android:id="@+id/hot_tool_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_common_back_arrow"
-                />
+                android:background="#000000"
+                android:src="@drawable/ic_circle_back_normal" />
+
             <TextView
                 android:id="@+id/home_fragment_three_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="#FFFFFF"
                 android:gravity="center"
-                android:text="填写联系方式"/>
+                android:text="填写联系方式"
+                android:textColor="#D5D5D5" />
+
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="确定"
-                android:textColor="#ffffff"
+                android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:padding="20dp"/>
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"
+                android:text="确定"
+                android:textColor="#FFFFFF" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:hint="请填写QQ，手机号或者邮箱等任何可以联系到您的方式"
-        android:gravity="top"/>
+        android:gravity="top"
+        android:hint="请填写QQ，手机号或者邮箱等任何可以联系到您的方式" />
 </LinearLayout>

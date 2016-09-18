@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import com.android.beautifulthing.R;
 
 /**
- * Created by Administrator on 2016/9/13 0013.
+ * Created by Administrator on 2016/9/13
  */
 public class FeedBackActivity extends AppCompatActivity {
     private Context mContent;
