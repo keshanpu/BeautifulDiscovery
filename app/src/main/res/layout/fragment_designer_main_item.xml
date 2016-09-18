@@ -28,7 +28,6 @@
         android:layout_alignBottom="@id/fragment_designer_main_item_blank_tv"/>
     <TextView
         android:id="@+id/fragment_designer_main_item_name"
-        android:text="Maff pierce"
         android:textColor="#ffffff"
         android:layout_below="@id/fragment_designer_main_item_iv2"
         android:layout_centerHorizontal="true"
@@ -38,7 +37,6 @@
         android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/fragment_designer_main_item_label"
-        android:text="Wood Faulk 创始人"
         android:textColor="#ffffff"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/fragment_designer_main_item_name"
@@ -47,7 +45,6 @@
         android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/fragment_designer_main_item_cocept"
-        android:text="创始人创始人创始人创始人创始人创始人"
         android:textColor="#ffffff"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/fragment_designer_main_item_label"
@@ -60,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/Focus_on"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/green"
         android:layout_below="@id/fragment_designer_main_item_cocept"
         />
 </RelativeLayout>

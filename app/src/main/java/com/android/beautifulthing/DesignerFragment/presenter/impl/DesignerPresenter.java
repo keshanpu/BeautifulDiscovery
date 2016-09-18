@@ -1,18 +1,16 @@
 package com.android.beautifulthing.DesignerFragment.presenter.impl;
 
 import com.android.beautifulthing.DesignerFragment.bean.DesignerBean;
-import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
 import com.android.beautifulthing.DesignerFragment.model.IDesignerModel;
 import com.android.beautifulthing.DesignerFragment.model.impl.DesignerModel;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerPresent;
-import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerView;
 
 /**
  * Created by Administrator on 2016/9/6
  */
 public class DesignerPresenter implements IDesignerPresent,
-        IDesignerPresent.CallBack, IDesignerPresent.CallBack2
+        IDesignerPresent.CallBack
        {
 //    IDesignerWorkView iDesignerWorkView;
 //    public DesignerPresenter(IDesignerWorkView iDesignerWorkView) {
@@ -25,12 +23,12 @@ public class DesignerPresenter implements IDesignerPresent,
 //        this.iDesignerShopView = iDesignerShopView;
 //    }
 
-    IDesignerDetilView iDesignerDetilView;
-
-    public DesignerPresenter(IDesignerDetilView iDesignerDetilView) {
-        this.iDesignerDetilView = iDesignerDetilView;
-
-    }
+//    IDesignerDetilView iDesignerDetilView;
+//
+//    public DesignerPresenter(IDesignerDetilView iDesignerDetilView) {
+//        this.iDesignerDetilView = iDesignerDetilView;
+//
+//    }
 
 
     IDesignerView iDesignerView;
@@ -54,10 +52,10 @@ public class DesignerPresenter implements IDesignerPresent,
         }
     }
 
-    @Override
-    public void getDesignerList(String base_Path, String url_path) {
-        iDesignerModel.queryDesignerDetilList(base_Path, url_path);
-    }
+//    @Override
+//    public void getDesignerList(String base_Path, String url_path) {
+//        iDesignerModel.queryDesignerDetilList(base_Path, url_path);
+//    }
 
 //    @Override
 //    public void getDesignerShopList(String base_Path2, String url_path2) {
@@ -69,12 +67,12 @@ public class DesignerPresenter implements IDesignerPresent,
 //        iDesignerModel.queryDesignerWorklList(base_Path3, url_path3);
 //    }
 
-    @Override
-    public void success2(DesignerDetilBean designerDetilBean) {
-        if (designerDetilBean != null) {
-            iDesignerDetilView.refreshListView(designerDetilBean);
-        }
-    }
+//    @Override
+//    public void success2(DesignerDetilBean designerDetilBean) {
+//        if (designerDetilBean != null) {
+//            iDesignerDetilView.refreshListView(designerDetilBean);
+//        }
+//    }
 
 //    @Override
 //    public void success3(DesignerShopBean designerShopBean) {

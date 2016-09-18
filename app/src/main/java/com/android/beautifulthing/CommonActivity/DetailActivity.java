@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.beautifulthing.DesignerFragment.DesignerDetilActivity;
 import com.android.beautifulthing.DiscoverFragment.adapter.DetailCommentAdapter;
 import com.android.beautifulthing.DiscoverFragment.adapter.DetailGridAdapter;
 import com.android.beautifulthing.DiscoverFragment.adapter.DetailListAdapter;
@@ -290,19 +291,13 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
                 finish();
                 break;
             case R.id.detail_item_face_dislike://哭脸
-                Toast.makeText(DetailActivity.this, "真可怜~", Toast.LENGTH_SHORT).show();
-//                mFaceDislike.setBackgroundResource(R.drawable.like_anim);
                 break;
             case R.id.detail_item_face_like://笑脸
-                Toast.makeText(DetailActivity.this, "谢谢喔~", Toast.LENGTH_SHORT).show();
-//                mFaceLike.setBackgroundResource(R.drawable.like_anim);
                 break;
             case R.id.detail_designer_image://跳转详情子页
-                //  TODO
-//                Intent trans = new Intent(DetailActivity.this, DesignerDetilActivity.class);
-//                trans.putExtra("designer_id", transId);
-//                DetailActivity.this.startActivity(trans);
-                Toast.makeText(DetailActivity.this, ""+transId, Toast.LENGTH_SHORT).show();
+                Intent trans = new Intent(DetailActivity.this, DesignerDetilActivity.class);
+                trans.putExtra("designer_id", transId);
+                DetailActivity.this.startActivity(trans);
                 break;
             case R.id.detail_add_attention_btn:// +关注
                 if (flag2){

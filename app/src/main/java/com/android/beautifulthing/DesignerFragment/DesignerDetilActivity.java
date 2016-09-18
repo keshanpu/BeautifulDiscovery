@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.beautifulthing.DesignerFragment.Adapter.DesignerDetilAdapter;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
@@ -25,9 +24,10 @@ import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
 import com.android.beautifulthing.DesignerFragment.designerDetilFragment.BuyFragment;
 import com.android.beautifulthing.DesignerFragment.designerDetilFragment.ShopFragment;
 import com.android.beautifulthing.DesignerFragment.designerDetilFragment.WroksFragment;
+import com.android.beautifulthing.DesignerFragment.presenter.IDesignerDetilPresent;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerPresent;
 import com.android.beautifulthing.DesignerFragment.presenter.IDesignerShopPreseter;
-import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
+import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerDetilPresenter;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPresnter;
 import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
@@ -48,7 +48,7 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
 
 //   private List<DesignerDetilBean.DataBean> designerDetilBeanList =new ArrayList<>();
     private PopupWindow mPWindow;
-
+    private IDesignerDetilPresent iDesignerDetilPresent;
     private  DesignerDetilBean.DataBean dataBean;
     private IDesignerPresent iDesignerPresent;
     private int designer_id;
@@ -87,6 +87,10 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
     ImageView mImageSpread;
     @BindView(R.id.shrink_up)
     ImageView mImageShrinkUp;
+    @BindView(R.id.more)
+    TextView mMore;
+    @BindView(R.id.less)
+    TextView mLess;
 
     private static final int VIDEO_CONTENT_DESC_MAX_LINE = 3;// 默认展示最大行数3行
     private static final int SHOW_CONTENT_NONE_STATE = 0;// 扩充
@@ -105,8 +109,10 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         Intent intent = getIntent();
         designer_id = intent.getIntExtra("designer_id",0);
         //
-        iDesignerPresent = new DesignerPresenter(this);
-        iDesignerPresent.getDesignerList(DataUrl.DESTIGNER_DETAILS_URL,designer_id+"");
+//        iDesignerPresent = new DesignerPresenter(this);
+//        iDesignerPresent.getDesignerList(DataUrl.DESTIGNER_DETAILS_URL,designer_id+"");
+        iDesignerDetilPresent = new DesignerDetilPresenter(this);
+        iDesignerDetilPresent.getDesignerDetilList(designer_id);
         //旗舰、在线购买
         iDesignerShopPreseter = new DesignerShopPresnter(this);
         iDesignerShopPreseter.getDesignerShopList(DataUrl.DESTIGNER_DETAILS2_URL,designer_id+"");
@@ -154,13 +160,17 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
                     description.setMaxLines(VIDEO_CONTENT_DESC_MAX_LINE);
                     description.requestLayout();
                     mImageShrinkUp.setVisibility(View.GONE);
+                    mLess.setVisibility(View.GONE);
                     mImageSpread.setVisibility(View.VISIBLE);
+                    mMore.setVisibility(View.VISIBLE);
                     mState = SHRINK_UP_STATE;
                 }else if(mState == SHRINK_UP_STATE){
                     description.setMaxLines(Integer.MAX_VALUE);
                     description.requestLayout();
                     mImageShrinkUp.setVisibility(View.VISIBLE);
+                    mLess.setVisibility(View.VISIBLE);
                     mImageSpread.setVisibility(View.GONE);
+                    mMore.setVisibility(View.GONE);
                     mState = SPREAD_STATE;
                 }
                 break;
@@ -169,7 +179,7 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
                 finish();
                 break;
             case R.id.activity_designerdetil_btn:
-                Toast.makeText(DesignerDetilActivity.this, "123", Toast.LENGTH_SHORT).show();
+
                 if (mPWindow!=null){
                 if (mPWindow.isShowing()){
                     mPWindow.dismiss();
@@ -179,7 +189,7 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
                 }
             }else {
 //                    initPopupWindow();
-                MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+                    MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
             }
             break;
 

@@ -24,16 +24,16 @@ public class HttpUtils_Designer {
         }
         return mHttpService_designer;
     }
-    public static HttpService_Designer create2(){
-        if (mHttpService_designer == null) {
-            Retrofit retrofit2 = new Retrofit.Builder()
-                    .baseUrl(DataUrl.DESIGNER_BASE_URL)
-                    .addConverterFactory(ScalarsConverterFactory.create())
-                    .build();
-            mHttpService_designer = retrofit2.create(HttpService_Designer.class);
-        }
-        return mHttpService_designer;
-    }
+//    public static HttpService_Designer create2(){
+//        if (mHttpService_designer == null) {
+//            Retrofit retrofit2 = new Retrofit.Builder()
+//                    .baseUrl(DataUrl.DESIGNER_BASE_URL)
+//                    .addConverterFactory(ScalarsConverterFactory.create())
+//                    .build();
+//            mHttpService_designer = retrofit2.create(HttpService_Designer.class);
+//        }
+//        return mHttpService_designer;
+//    }
     public static HttpService_Designer create3(){
         if (mHttpService_designer == null) {
             Retrofit retrofit3 = new Retrofit.Builder()

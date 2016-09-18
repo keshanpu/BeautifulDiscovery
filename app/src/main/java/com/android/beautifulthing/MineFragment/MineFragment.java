@@ -107,10 +107,10 @@ public class MineFragment extends Fragment {
                     if (mPWindow.isShowing()){
                         mPWindow.dismiss();
                     }else {
-                        MyPopWindow.initPopupWindow(mContext);
+                        MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -122,10 +122,10 @@ public class MineFragment extends Fragment {
                     if (mPWindow.isShowing()){
                         mPWindow.dismiss();
                     }else {
-                        MyPopWindow.initPopupWindow(mContext);
+                        MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -137,10 +137,10 @@ public class MineFragment extends Fragment {
                     if (mPWindow.isShowing()){
                         mPWindow.dismiss();
                     }else {
-                        MyPopWindow.initPopupWindow(mContext);
+                        MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -152,10 +152,10 @@ public class MineFragment extends Fragment {
                     if (mPWindow.isShowing()){
                         mPWindow.dismiss();
                     }else {
-                        MyPopWindow.initPopupWindow(mContext);
+                        MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -167,10 +167,10 @@ public class MineFragment extends Fragment {
                     if (mPWindow.isShowing()){
                         mPWindow.dismiss();
                     }else {
-                        MyPopWindow.initPopupWindow(mContext);
+                        MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
