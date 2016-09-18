@@ -29,6 +29,7 @@
     </android.support.v7.widget.Toolbar>
 
     <EditText
+        android:id="@+id/login_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -36,6 +37,7 @@
         android:layout_marginTop="30dp"
         android:hint="请输入用户名"/>
     <EditText
+        android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
