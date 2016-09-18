@@ -36,4 +36,5 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
     compile 'com.android.support:design:24.1.1'
     compile project(':refreshlibrary')
+    compile project(path: ':deckview')
 }

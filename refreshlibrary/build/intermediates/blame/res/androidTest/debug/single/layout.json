@@ -1,18 +1,26 @@
 [
     {
-        "merged": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
-        "source": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
     },
     {
-        "merged": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
-        "source": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
     },
     {
-        "merged": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
-        "source": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
     },
     {
-        "merged": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
-        "source": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/res/merged/androidTest/debug/layout/pull_to_refresh_header_horizontal.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/bundles/debug/res/layout/pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/res/merged/androidTest/debug/layout/pull_to_refresh_header_vertical.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/bundles/debug/res/layout/pull_to_refresh_header_vertical.xml"
     }
 ]

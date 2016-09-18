@@ -30,7 +30,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="qwertyuiopasdfghjklzxcvbnm"
                 android:textSize="16sp"
-                android:textColor="@color/white"
+                android:textColor="@color/colorwhite"
                 android:background="#D0000000"/>
             <TextView
                 android:id="@+id/daily_item_brief_tv"
@@ -41,7 +41,7 @@
                 android:layout_marginBottom="16dp"
                 android:text="qwer"
                 android:textSize="16sp"
-                android:textColor="@color/white"
+                android:textColor="@color/colorwhite"
                 android:background="#D0000000"/>
         </RelativeLayout>
 
@@ -80,7 +80,7 @@
                     android:gravity="center_vertical"
                     android:singleLine="true"
                     android:text="designer name"
-                    android:textColor="@color/white"
+                    android:textColor="@color/colorwhite"
                     android:textSize="16sp"/>
                 <TextView
                     android:id="@+id/daily_item_designer_label"
@@ -88,7 +88,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="designer label"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/colorwhite"/>
             </LinearLayout>
 
             <RadioGroup
@@ -113,7 +113,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/white"/>
+                    android:background="@color/colorwhite"/>
                 <RadioButton
                     android:id="@+id/daily_item_face_like"
                     android:layout_width="wrap_content"

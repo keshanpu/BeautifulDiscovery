@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.appeaser.deckview.de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/magazinedetail_recyer_item_author_avatar_url"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <TextView
+        android:id="@+id/magazinedetail_recyer_item_author_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/magazinedetail_recyer_item_author_avatar_url"
+        android:layout_alignTop="@id/magazinedetail_recyer_item_author_avatar_url"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/magazinedetail_recyer_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/magazinedetail_recyer_item_author_username"
+        android:layout_alignLeft="@id/magazinedetail_recyer_item_author_username"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/magazinedetail_recycler_item_createat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_alignBottom="@id/magazinedetail_recyer_item_author_username"
+        android:textColor="@color/colordarkgray"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/comment_input_bg"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignLeft="@id/magazinedetail_recyer_item_content"
+        android:layout_below="@id/magazinedetail_recyer_item_content"
+        />
+</RelativeLayout>

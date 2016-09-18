@@ -1,18 +1,26 @@
 [
     {
-        "merged": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
-        "source": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
-        "merged": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
-        "source": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_bottom.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml"
     },
     {
-        "merged": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
-        "source": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     },
     {
-        "merged": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
-        "source": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_top.xml",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/bundles/debug/res/drawable/indicator_bg_top.xml"
     }
 ]

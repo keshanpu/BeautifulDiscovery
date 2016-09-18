@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativelayout"
+    >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/magezinedetail_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorwhite"
+        />
+
+
+    <ImageButton
+        android:id="@+id/magezinedetail_top_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="center"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_circle_back_normal"
+        />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/magazinedetail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorwhite"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <com.appeaser.deckview.de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/magazinedetail_bottom_actionbar_default_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"
+                />
+
+            <EditText
+                android:id="@+id/article_comment_icon_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="4"
+                android:background="@drawable/magazinedetail_toorbal_edittext_bg"
+                />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                >
+            <ImageView
+                android:id="@+id/article_comment_icon_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:src="@drawable/article_comment_icon"
+                />
+            <TextView
+                android:id="@+id/article_comment_icon_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/colordarkgray"
+                android:layout_toRightOf="@id/article_comment_icon_img"
+                />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:id="@+id/article_like_normal_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:src="@drawable/article_like_normal"
+                    />
+                <TextView
+                    android:id="@+id/article_like_normal_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/colordarkgray"
+                    android:layout_toRightOf="@id/article_like_normal_img"
+                    />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:src="@drawable/article_more_icon"
+                />
+
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <!--分割线-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/comment_input_bg"
+        android:layout_alignTop="@+id/magazinedetail_toolbar"
+        />
+
+</RelativeLayout>

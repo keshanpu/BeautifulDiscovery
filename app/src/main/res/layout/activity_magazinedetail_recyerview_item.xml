@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorwhite"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+        <!--自我介绍-->
+        <com.android.beautifulthing.MagazineFragment.Tools.customview.Mylistview
+            android:id="@+id/magazinedetail_recycler_item_description_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:listSelector="@color/transparent" />
+        <!--android:listSelector="@color/transparent"设置listview点击时背景-->
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack2" />
+        <!--申请成为最美作者-->
+        <RelativeLayout
+            android:id="@+id/magazinedetail_recycler_item_became_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/became_author_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="成为最美作者"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/became_author_content1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/became_author_tv"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:text="有你自己喜欢的独特品牌?" />
+
+            <TextView
+                android:id="@+id/became_author_content2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/became_author_content1"
+                android:layout_below="@id/became_author_content1"
+                android:text="希望分享给大家、找到品味相投的伙伴?" />
+
+            <TextView
+                android:id="@+id/became_author_content3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/became_author_content2"
+                android:layout_below="@id/became_author_content2"
+                android:text="这里就是你的发布台。" />
+
+            <Button
+                android:id="@+id/became_author_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/became_author_content3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorblack"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="申请成为作者"
+                android:textColor="@color/colorwhite" />
+        </RelativeLayout>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorblack2" />
+        <!--分享这篇文章-->
+        <RelativeLayout
+            android:id="@+id/magazinedetail_recycler_item_share_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/share_author_article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="分享这篇文章"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/share_author_article_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/share_author_article"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/share_author_article_sina_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/share_sina_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="新浪微博"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/share_author_article_qq_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/share_qq_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="QQ"
+
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/share_author_article_weixin_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/share_weixin_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:text="微信"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorblack"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        >
+        <!--设计师作品,固定-->
+        <TextView
+            android:id="@+id/magazinedetail_recycler_item_design_fixed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/magazinedetail_recycler_item_share_author"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:text="设计师＆作品"
+            android:textColor="@color/colordarkgray"
+            />
+
+        <LinearLayout
+            android:id="@+id/magazinedetail_recycler_item_design_fork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorwhite"
+            android:layout_marginBottom="20dp"
+            >
+            <com.appeaser.deckview.de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/magazinedetail_recycler_item_design_fork_circleview"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_mine_portrait"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/magazinedetail_recycler_item_design_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/magazinedetail_recycler_item_design_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                >
+            </TextView>
+
+            <Button
+                android:id="@+id/magazinedetail_recycler_item_design_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@color/colorblack"
+                android:text="+关注"
+                android:textColor="@color/colorwhite"
+                />
+
+            <!--下面两个textview和Linerlayout中imageView做折叠效果-->
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/magazinedetail_recycler_item_design_description_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:id="@+id/magazinedetail_recycler_item_design_expand_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_fold"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/magazinedetail_recycler_item_design_expand_view_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="展开"
+                    android:textColor="@color/colormagazinefold"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+<!--由于有的界面有,有的没有就没做;-->
+        <!--&lt;!&ndash;点击gridview上图片&ndash;&gt;-->
+        <!--<com.android.beautifulthing.MagazineFragment.Tools.customview.Mygridview-->
+        <!--android:id="@+id/magazinedetail_recycler_item_gridview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:numColumns="2"-->
+        <!--android:layout_below="@id/magazinedetail_recycler_item_design_fork"-->
+        <!--/>-->
+        <!--评论,固定-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/magazinedetail_recycler_item_share_author"
+            android:orientation="horizontal"
+            android:layout_margin="20dp"
+            >
+            <TextView
+                android:id="@+id/magazinedetail_recycler_item_comment_txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评论("
+                android:textColor="@color/colordarkgray"
+                />
+
+            <TextView
+                android:id="@+id/magazinedetail_recycler_item_comment_txtnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colordarkgray"
+                />
+            <TextView
+                android:id="@+id/magazinedetail_recycler_item_comment_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=")"
+                android:textColor="@color/colordarkgray"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorwhite"
+            android:layout_marginBottom="100dp"
+            >
+            <com.android.beautifulthing.MagazineFragment.Tools.customview.Mylistview
+                android:id="@+id/magazinedetail_recycler_item_comment_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:listSelector="@color/transparent"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

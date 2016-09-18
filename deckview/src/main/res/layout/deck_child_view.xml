@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2014 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<com.appeaser.deckview.views.DeckChildView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+        <RelativeLayout
+            android:id="@+id/task_view_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            >
+      <!---->
+            <!--&gt;-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tash_view_emptybg"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:background="@color/colorwhite"-->
+                <!--android:layout_marginTop="-12dp"-->
+                <!--android:text="你好"-->
+                <!--android:textSize="25sp"-->
+                <!--/>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorwhite"
+                android:gravity="center"
+                >
+                <!--android:background="@color/colorwhite">-->
+                <!--android:layout_below="@id/tash_view_emptybg"-->
+                <TextView
+                    android:id="@+id/tash_view_icon_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/tash_view_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/tash_view_icon_title"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:gravity="center"
+
+                    />
+                <TextView
+                    android:id="@+id/tash_view_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="人生亦如鞋子,舒适与否唯有自知"
+                    android:textSize="15sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/tash_view_title"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:gravity="center"
+
+                    />
+
+                <!--<com.appeaser.deckview.views.DeckChildViewThumbnail-->
+                <!--android:id="@+id/task_view_thumbnail"-->
+                <ImageView
+                    android:id="@+id/task_view_url_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/tash_view_subtitle"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    />
+
+                <!--<include layout="@layout/deck_child_view_header" />-->
+
+            </RelativeLayout>
+            <!--<com.appeaser.deckview.views.FixedSizeImageView-->
+                <!--android:id="@+id/task_view_mycircleimage"-->
+                <!--android:layout_width="24dp"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:src="@drawable/icon_bad_select"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--/>-->
+            <com.appeaser.deckview.de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/task_view_mycircleimage"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                app:civ_border_width="2dp"
+                app:civ_fill_color="@color/colorwhite"
+                app:civ_border_color="@color/colorwhite"
+                />
+        </RelativeLayout>
+
+</com.appeaser.deckview.views.DeckChildView>

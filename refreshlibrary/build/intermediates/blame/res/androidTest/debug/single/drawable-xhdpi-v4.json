@@ -1,26 +1,38 @@
 [
     {
-        "merged": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_flip.png",
-        "source": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_flip.png"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_flip.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_flip.png"
     },
     {
-        "merged": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_rotate.png",
-        "source": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_rotate.png"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_rotate.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_rotate.png"
     },
     {
-        "merged": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_flip.png",
-        "source": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_flip.png"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_flip.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_flip.png"
     },
     {
-        "merged": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\indicator_arrow.png",
-        "source": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\indicator_arrow.png"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/default_ptr_flip.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/default_ptr_flip.png"
     },
     {
-        "merged": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_rotate.png",
-        "source": "E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_rotate.png"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\indicator_arrow.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\indicator_arrow.png"
     },
     {
-        "merged": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\indicator_arrow.png",
-        "source": "G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\indicator_arrow.png"
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/indicator_arrow.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/indicator_arrow.png"
+    },
+    {
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/default_ptr_rotate.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/refreshlibrary/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/default_ptr_rotate.png"
+    },
+    {
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_rotate.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/E:\\MyApplication\\BeautifulDiscovery\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_rotate.png"
+    },
+    {
+        "merged": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\indicator_arrow.png",
+        "source": "/Users/keshanpu/Desktop/BeautifulDiscovery/G:\\Users\\yudongyang\\AndroidStudioProjects\\BeautifulThing\\refreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\indicator_arrow.png"
     }
 ]

@@ -5,4 +5,6 @@
 
     <dimen name="fragment_designer_main_size">20sp</dimen>
 
+    <dimen name="activity_magazine_detail_textsize_normal">18sp</dimen>
+
 </resources>

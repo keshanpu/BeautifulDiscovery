@@ -71,7 +71,7 @@
                             android:layout_marginLeft="24dp"
                             android:layout_marginRight="24dp"
                             android:layout_gravity="center_vertical"
-                            android:background="@color/white"/>
+                            android:background="@color/colorwhite"/>
                         <RadioButton
                             android:onClick="click"
                             android:id="@+id/detail_item_face_like"
@@ -225,7 +225,7 @@
             android:layout_height="45dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:background="@color/white">
+            android:background="@color/colorwhite">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
