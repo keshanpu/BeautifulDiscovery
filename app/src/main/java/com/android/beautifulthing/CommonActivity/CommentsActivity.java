@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.android.beautifulthing.DiscoverFragment.adapter.CommentsAdapter;
@@ -60,6 +62,8 @@ public class CommentsActivity extends AppCompatActivity implements ICommentView{
      */
     private void initView() {
         mCommentsListView = (ListView) findViewById(R.id.common_comments_listview);
+        LinearLayout emptyView = (LinearLayout) findViewById(R.id.comments_empty_view);
+        mCommentsListView.setEmptyView(emptyView);
         commentPresenter = new CommentPresenter(this);
         commentPresenter.getCommentDatas(id);
     }

@@ -91,27 +91,39 @@
                     android:textColor="@color/white"/>
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/daily_item_face_dislike"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/feed_dislike"/>
-
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="center_vertical"
-                android:background="@color/white"/>
-
-            <ImageView
-                android:id="@+id/daily_item_face_like"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/feed_like"/>
+            <RadioGroup
+                android:id="@+id/main_bottom_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:background="#2C2C2C"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/daily_item_face_dislike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/dislike_selector"
+                    android:textColor="@color/main_radiobutton_textcolor"
+                    android:textSize="0sp"/>
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/white"/>
+                <RadioButton
+                    android:id="@+id/daily_item_face_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/like_selector"
+                    android:textColor="@color/main_radiobutton_textcolor"
+                    android:textSize="0sp"/>
+            </RadioGroup>
 
         </LinearLayout>
 
