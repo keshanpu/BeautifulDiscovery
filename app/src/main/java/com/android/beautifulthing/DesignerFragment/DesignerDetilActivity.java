@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.beautifulthing.DesignerFragment.Adapter.DesignerDetilAdapter;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
@@ -181,7 +180,6 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
                 break;
             case R.id.activity_designerdetil_btn:
 
-                Toast.makeText(DesignerDetilActivity.this, "123", Toast.LENGTH_SHORT).show();
                 if (mPWindow!=null){
                 if (mPWindow.isShowing()){
                     mPWindow.dismiss();

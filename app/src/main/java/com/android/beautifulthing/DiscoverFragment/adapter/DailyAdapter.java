@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -145,9 +146,9 @@ public class DailyAdapter extends BaseAdapter {
         @BindView(R.id.daily_item_designer_label)
         TextView mDesignerLabelTv;
         @BindView(R.id.daily_item_face_dislike)
-        ImageView mFaceDislike;
+        RadioButton mFaceDislike;
         @BindView(R.id.daily_item_face_like)
-        ImageView mFaceLike;
+        RadioButton mFaceLike;
 
         public ViewHolder(View view) {
             view.setTag(this);

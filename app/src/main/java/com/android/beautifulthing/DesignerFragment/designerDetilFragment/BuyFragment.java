@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +78,6 @@ public class BuyFragment extends Fragment  implements IDesignerShop2View {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, WebViewActivity.class);
                 intent.putExtra("shop_url",shopUrl);
-                Log.d("TAG123456", "onClick: "+shopUrl.toString());
                 intent.putExtra("shop_name",shop_name);
                 mContext.startActivity(intent);
             }

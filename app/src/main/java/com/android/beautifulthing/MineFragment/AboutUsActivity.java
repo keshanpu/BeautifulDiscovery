@@ -26,9 +26,7 @@ public class AboutUsActivity extends AppCompatActivity {
 
     }
 
-
     public void click(View view) {
-
         switch (view.getId()){
             case R.id.activity_about_us_weibo:
             case R.id.activity_about_us_tv1:;
@@ -48,7 +46,7 @@ public class AboutUsActivity extends AppCompatActivity {
                 mContext.startActivity(intent2);
                 break;
         }
-
     }
+
 }
 

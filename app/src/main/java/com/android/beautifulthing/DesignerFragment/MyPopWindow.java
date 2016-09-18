@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
-import android.widget.Toast;
 
 import com.android.beautifulthing.R;
 
@@ -40,21 +39,21 @@ public class MyPopWindow {
         qqLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "qq", Toast.LENGTH_SHORT).show();
+                //TODO
             }
         });
         wenxinLogin= (ImageButton) windowView.findViewById(R.id.pop_window_wenxin);
         wenxinLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "wen", Toast.LENGTH_SHORT).show();
+                //TODO
             }
         });
         sinaLogin= (ImageButton) windowView.findViewById(R.id.pop_window_sina);
         sinaLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "sina", Toast.LENGTH_SHORT).show();
+                //TODO
             }
         });
         mPWindow = new PopupWindow(windowView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);

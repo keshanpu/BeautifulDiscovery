@@ -2,7 +2,6 @@ package com.android.beautifulthing.DesignerFragment.Adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -21,7 +20,7 @@ public class DesignerDetilAdapter extends PagerAdapter{
     public DesignerDetilAdapter(List<String> stringList, Context context) {
         this.stringList = stringList;
         this.context = context;
-        Log.d("====", "DesignerDetilAdapter: "+stringList.size());
+
     }
 
     @Override
@@ -41,7 +40,6 @@ public class DesignerDetilAdapter extends PagerAdapter{
         //设置最小高度
         imageView.setMinimumHeight(10);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        Log.d("==", "instantiateItem: "+stringList.get(0));
         Picasso.with(context).load(stringList.get(position)).into(imageView);
         container.addView(imageView);
         return imageView;

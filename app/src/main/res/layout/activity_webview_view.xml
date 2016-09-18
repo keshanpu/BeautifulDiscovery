@@ -40,16 +40,19 @@
         android:layout_height="40dp"
         android:background="#ffffff">
         <ImageButton
-            android:id="@+id/back"
+            android:onClick="click"
+            android:id="@+id/browser_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/browser_back_selector"
+            android:src="@drawable/browser_back_disabled"
             android:background="#ffffff"/>
         <ImageButton
+            android:onClick="click"
+            android:id="@+id/browser_forward"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_toRightOf="@id/back"
-            android:src="@drawable/browser_forward_selector"
+            android:layout_toRightOf="@id/browser_back"
+            android:src="@drawable/browser_forward_disabled"
             android:background="#ffffff"/>
         <ImageButton
             android:onClick="click"

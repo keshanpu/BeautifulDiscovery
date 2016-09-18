@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,10 +57,10 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
 
     private CircleImageView mDesignerIv;
 
-//    @BindView(R.id.detail_item_face_dislike)
-//    ImageView mFaceDislike;
-//    @BindView(R.id.detail_item_face_like)
-//    ImageView mFaceLike;
+    @BindView(R.id.detail_item_face_dislike)
+    RadioButton mFaceDislike;
+    @BindView(R.id.detail_item_face_like)
+    RadioButton mFaceLike;
     @BindView(R.id.detail_item_digest_tv)
     TextView mDigestTv;
     @BindView(R.id.detail_item_name_tv)
@@ -181,17 +182,19 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
         mListView.setAdapter(mDetailListAdapter);
         //评论ListView
         mCommentListView = (MyListView) findViewById(R.id.detail_comments_listview);
-        View footerView = LayoutInflater.from(mContext).inflate(R.layout.detail_comments_foot_view, null, false);
-        mCommentListView.addFooterView(footerView);
-        LinearLayout linearLayout = (LinearLayout) footerView.findViewById(R.id.watch_all_comments);
-        linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, CommentsActivity.class);
-                intent.putExtra("id", id);
-                mContext.startActivity(intent);
-            }
-        });
+        if (comments.size() > 0){
+            View footerView = LayoutInflater.from(mContext).inflate(R.layout.detail_comments_foot_view, null, false);
+            mCommentListView.addFooterView(footerView);
+            LinearLayout linearLayout = (LinearLayout) footerView.findViewById(R.id.watch_all_comments);
+            linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, CommentsActivity.class);
+                    intent.putExtra("id", id);
+                    mContext.startActivity(intent);
+                }
+            });
+        }
         mDetailCommentAdapter = new DetailCommentAdapter(mContext, comments);
         mCommentListView.setAdapter(mDetailCommentAdapter);
         //GridView
@@ -289,9 +292,11 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
                 break;
             case R.id.detail_item_face_dislike://哭脸
                 Toast.makeText(DetailActivity.this, "真可怜~", Toast.LENGTH_SHORT).show();
+//                mFaceDislike.setBackgroundResource(R.drawable.like_anim);
                 break;
             case R.id.detail_item_face_like://笑脸
                 Toast.makeText(DetailActivity.this, "谢谢喔~", Toast.LENGTH_SHORT).show();
+//                mFaceLike.setBackgroundResource(R.drawable.like_anim);
                 break;
             case R.id.detail_designer_image://跳转详情子页
                 //  TODO

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +63,6 @@ public class ShopFragment extends Fragment implements IDesignerShop2View {
     public void refreshListView2(DesignerShopBean designerShopBean) {
         DesignerShopBean.DataBean dataBean =designerShopBean.getData();
         dataBean.getShop_image();
-        Log.d("++", "refreshListView: "+dataBean.toString());
         if (!dataBean.getShop_image().isEmpty()){
             Picasso.with(mContext).load(dataBean.getShop_image()).into(imageView);
             city.setText(dataBean.getShops().get(0).getCity());

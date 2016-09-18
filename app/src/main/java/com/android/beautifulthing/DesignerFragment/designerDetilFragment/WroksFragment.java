@@ -70,12 +70,10 @@ public class WroksFragment extends Fragment implements IDesignerWorkView{
     public void refreshListView(DesignerWorksBean designerWorksBean) {
         urllist.clear();
         dataBean = designerWorksBean.getData();
-        Log.d("TAG0000", "refreshListView: "+dataBean.toString());
         for (int i = 0; i <dataBean.getProducts().size() ; i++) {
             urllist.add(dataBean.getProducts().get(i).getCover_images().get(0));
             idlist.add(dataBean.getProducts().get(i).getId());
         }
-        Log.d("2222", "refreshListView: "+urllist.size());
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         mRecyclerView.setAdapter(new MyAdapter());
     }

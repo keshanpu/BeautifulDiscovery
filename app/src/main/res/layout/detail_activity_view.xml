@@ -48,27 +48,41 @@
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:background="#1F1F1F">
-                    <ImageView
-                        android:onClick="click"
-                        android:id="@+id/detail_item_face_dislike"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/feed_dislike"/>
-                    <TextView
-                        android:layout_width="1dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@color/white"/>
-                    <ImageView
-                        android:onClick="click"
-                        android:id="@+id/detail_item_face_like"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/feed_like"/>
+                    <RadioGroup
+                        android:id="@+id/main_bottom_radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:background="#1F1F1F"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:onClick="click"
+                            android:id="@+id/detail_item_face_dislike"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:gravity="center_horizontal"
+                            android:drawableTop="@drawable/dislike_selector"
+                            android:textColor="@color/main_radiobutton_textcolor"
+                            android:textSize="0sp"/>
+                        <TextView
+                            android:layout_width="1dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/white"/>
+                        <RadioButton
+                            android:onClick="click"
+                            android:id="@+id/detail_item_face_like"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:gravity="center_horizontal"
+                            android:drawableTop="@drawable/like_selector"
+                            android:textColor="@color/main_radiobutton_textcolor"
+                            android:textSize="0sp"/>
+                    </RadioGroup>
                 </LinearLayout>
                 <TextView
                     android:id="@+id/detail_item_digest_tv"
