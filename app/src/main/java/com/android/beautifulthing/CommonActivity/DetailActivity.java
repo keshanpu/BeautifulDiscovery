@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.beautifulthing.DesignerFragment.DesignerDetilActivity;
 import com.android.beautifulthing.DiscoverFragment.adapter.DetailCommentAdapter;
 import com.android.beautifulthing.DiscoverFragment.adapter.DetailGridAdapter;
 import com.android.beautifulthing.DiscoverFragment.adapter.DetailListAdapter;
@@ -294,9 +295,9 @@ public class DetailActivity extends AppCompatActivity implements IDetailView{
                 break;
             case R.id.detail_designer_image://跳转详情子页
                 //  TODO
-//                Intent trans = new Intent(DetailActivity.this, DesignerDetilActivity.class);
-//                trans.putExtra("designer_id", transId);
-//                DetailActivity.this.startActivity(trans);
+                Intent trans = new Intent(DetailActivity.this, DesignerDetilActivity.class);
+                trans.putExtra("designer_id", transId);
+                DetailActivity.this.startActivity(trans);
                 Toast.makeText(DetailActivity.this, ""+transId, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.detail_add_attention_btn:// +关注

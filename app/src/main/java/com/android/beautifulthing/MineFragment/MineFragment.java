@@ -78,11 +78,12 @@ public class MineFragment extends Fragment {
                         mPWindow.dismiss();
                     }else {
 //                        initPopupWindow();
-                        MyPopWindow.initPopupWindow(mContext);
+
+                       MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
 //                    initPopupWindow();
-                    MyPopWindow.initPopupWindow(mContext);
+                   MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -94,11 +95,11 @@ public class MineFragment extends Fragment {
                         mPWindow.dismiss();
                     }else {
 //                        initPopupWindow();
-                        MyPopWindow.initPopupWindow(mContext);
+                        MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
 //                    initPopupWindow();
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -110,11 +111,11 @@ public class MineFragment extends Fragment {
                         mPWindow.dismiss();
                     }else {
 //                        initPopupWindow();
-                        MyPopWindow.initPopupWindow(mContext);
+                       MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
 //                    initPopupWindow();
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -126,11 +127,11 @@ public class MineFragment extends Fragment {
                         mPWindow.dismiss();
                     }else {
 //                        initPopupWindow();
-                        MyPopWindow.initPopupWindow(mContext);
+                         MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
 //                    initPopupWindow();
-                    MyPopWindow.initPopupWindow(mContext);
+                     MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });
@@ -142,11 +143,11 @@ public class MineFragment extends Fragment {
                         mPWindow.dismiss();
                     }else {
 //                        initPopupWindow();
-                        MyPopWindow.initPopupWindow(mContext);
+                         MyPopWindow.initPopupWindow(getActivity());
                     }
                 }else {
 //                    initPopupWindow();
-                    MyPopWindow.initPopupWindow(mContext);
+                    MyPopWindow.initPopupWindow(getActivity());
                 }
             }
         });

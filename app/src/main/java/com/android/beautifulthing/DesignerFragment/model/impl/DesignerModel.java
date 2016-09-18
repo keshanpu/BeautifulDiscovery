@@ -2,7 +2,6 @@ package com.android.beautifulthing.DesignerFragment.model.impl;
 
 import com.android.beautifulthing.DesignerFragment.Http_Designer.HttpUtils_Designer;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerBean;
-import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
 import com.android.beautifulthing.DesignerFragment.model.IDesignerModel;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
 
@@ -34,18 +33,18 @@ public class DesignerModel implements IDesignerModel {
 
     }
 
-    @Override
-    public void queryDesignerDetilList(String base_Path, String url_path) {
-        HttpUtils_Designer.create2().queryDesigner2(base_Path,url_path)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<DesignerDetilBean>() {
-                    @Override
-                    public void call(DesignerDetilBean designerDetilBean) {
-                        designerPresenter.success2(designerDetilBean);
-                    }
-                });
-    }
+//    @Override
+//    public void queryDesignerDetilList(String base_Path, String url_path) {
+//        HttpUtils_Designer.create2().queryDesigner2(base_Path,url_path)
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Action1<DesignerDetilBean>() {
+//                    @Override
+//                    public void call(DesignerDetilBean designerDetilBean) {
+//                        designerPresenter.success2(designerDetilBean);
+//                    }
+//                });
+//    }
 
 //    @Override
 //    public void queryDesignerShoplList(String base_Path2, String url_path2) {

@@ -24,7 +24,9 @@
                         <android.support.v4.view.ViewPager
                             android:id="@+id/activity_designerdetil_viewpager"
                             android:layout_width="match_parent"
-                            android:layout_height="500dp" />
+                            android:layout_height="350dp"
+                            android:background="@mipmap/ic_launcher"
+                            />
 
                         <LinearLayout
                             android:id="@+id/activity_designerdetil_indicator"
@@ -70,7 +72,8 @@
                             android:layout_below="@id/activity_designerdetil_viewpager"
                             android:layout_width="match_parent"
                             android:layout_height="50dp" />
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/activity_designerdetil_iv"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
@@ -87,7 +90,6 @@
                             android:layout_below="@id/activity_designerdetil_iv"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="Maff pierce"
                             android:textColor="#000000"
                             android:textSize="@dimen/fragment_designer_main_size" />
 
@@ -98,7 +100,7 @@
                             android:layout_below="@id/activity_designerdetil_name"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="Wood Faulk 创始人" />
+                             />
 
                         <TextView
                             android:id="@+id/activity_designerdetil_cocept"
@@ -107,7 +109,7 @@
                             android:layout_below="@id/activity_designerdetil_label"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="创始人创始人创始人创始人创始人创始人" />
+                            />
 
                         <Button
                             android:id="@+id/activity_designerdetil_btn"
@@ -131,38 +133,51 @@
                             android:ellipsize="end"
                             android:maxLines="3"
                             android:singleLine="false"
-                            android:text="创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人创始人" />
+                           />
                         <RelativeLayout
                             android:id="@+id/show_more"
                             android:layout_below="@id/activity_designerdetil_description"
-                            android:layout_alignParentRight="true"
+                            android:layout_centerHorizontal="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
                             android:onClick="click"
                             >
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_centerHorizontal="true"-->
+                                <!--android:textSize="13sp"-->
+                                <!--android:textColor="#999"-->
+                                <!--android:layout_marginRight="34dip"-->
+                                <!--android:text="更多" />-->
                             <TextView
+                                android:id="@+id/more"
+                                android:text="@string/spread"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:textSize="13sp"
-                                android:textColor="#999"
-                                android:layout_marginRight="34dip"
-                                android:text="更多" />
-
+                                android:layout_centerHorizontal="true"/>
                             <ImageView
                                 android:id="@+id/spread"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:background="@drawable/icon_category" />
-
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/more"
+                                android:background="@drawable/ic_expand_more_black_12dp" />
+                            <TextView
+                                android:id="@+id/less"
+                                android:text="@string/shrink_up"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:visibility="gone" />
                             <ImageView
                                 android:id="@+id/shrink_up"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:background="@drawable/ic_circle_back_normal"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/less"
+                                android:background="@drawable/ic_expand_less_black_12dp"
                                 android:visibility="gone" />
                         </RelativeLayout>
                     </RelativeLayout>
@@ -176,8 +191,8 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
                 <android.support.design.widget.TabLayout
                     android:id="@+id/activity_designerdetil_tablayout"
-                    app:tabSelectedTextColor="@color/colorAccent"
-                    app:tabTextColor="@color/colorPrimary"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextColor="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <android.support.v4.view.ViewPager

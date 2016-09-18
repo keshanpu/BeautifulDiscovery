@@ -145,7 +145,7 @@ public class DesignerAdapter  extends BaseAdapter{
                             Toast.makeText(mContext, "sina", Toast.LENGTH_SHORT).show();
                         }
                     });
-                    mPWindow = new PopupWindow(windowView, 500, 500);
+                    mPWindow = new PopupWindow(windowView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
                     //设置参数，让点击屏幕空白区域，可以使PopupWindow消失
                      mPWindow.setBackgroundDrawable(new ColorDrawable());
