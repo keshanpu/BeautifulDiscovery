@@ -63,8 +63,6 @@ public class MagazineDetailActivity extends AppCompatActivity implements IMagazi
         Intent intent = getIntent();
         mId = intent.getIntExtra("id", 0);
 
-
-
        initView();
 
 
