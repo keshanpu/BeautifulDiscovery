@@ -5,8 +5,8 @@ import com.android.beautifulthing.DesignerFragment.bean.DesignerBean;
 import com.android.beautifulthing.DesignerFragment.model.IDesignerModel;
 import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerPresenter;
 
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 /**
@@ -24,9 +24,19 @@ public class DesignerModel implements IDesignerModel {
         HttpUtils_Designer.create().queryDesigner(page,size)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<DesignerBean>() {
+                .subscribe(new Subscriber<DesignerBean>() {
                     @Override
-                    public void call(DesignerBean designerBean) {
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onNext(DesignerBean designerBean) {
                         designerPresenter.success(designerBean);
                     }
                 });

@@ -1,4 +1,4 @@
-package com.android.beautifulthing.MagazineFragment.Tools.customview;
+package com.android.beautifulthing.MagazineFragment.tools.customview;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -15,13 +15,14 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.view.animation.Transformation;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.beautifulthing.CommonActivity.CommentsActivity;
-import com.android.beautifulthing.MagazineFragment.Tools.customview.Mylistview;
+import com.android.beautifulthing.CommonActivity.LoginActivity;
+import com.android.beautifulthing.MagazineFragment.tools.customview.Mylistview;
 import com.android.beautifulthing.MagazineFragment.adapter.DetailCommentListAdapter;
 import com.android.beautifulthing.MagazineFragment.adapter.DetailListAdapter;
 import com.android.beautifulthing.MagazineFragment.bean.MagazineDetailBean;
@@ -29,6 +30,7 @@ import com.android.beautifulthing.MagazineFragment.presenter.impl.MagazineDetail
 import com.android.beautifulthing.MagazineFragment.scroll.TopDecoration;
 import com.android.beautifulthing.MagazineFragment.scroll.TopTrackListener;
 import com.android.beautifulthing.MagazineFragment.view.IMagazineDetailActivityView;
+import com.android.beautifulthing.MineFragment.LoginInfo;
 import com.android.beautifulthing.R;
 import com.appeaser.deckview.de.hdodenhof.circleimageview.CircleImageView;
 import com.squareup.picasso.Picasso;
@@ -52,6 +54,7 @@ public class MagazineDetailActivity extends AppCompatActivity implements IMagazi
     private TextView likeNum;
     private TextView commentNum;
     private TextView commentfootviewTv;
+    public EditText commentEdit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -105,6 +108,15 @@ public class MagazineDetailActivity extends AppCompatActivity implements IMagazi
         //button toolbar
         commentNum = (TextView) findViewById(R.id.article_comment_icon_num);
         likeNum = (TextView) findViewById(R.id.article_like_normal_num);
+        commentEdit = (EditText) findViewById(R.id.article_comment_icon_edit);
+        commentEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MagazineDetailActivity.this, CommentsActivity.class);
+                intent.putExtra("id",dataBean.getId());
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadDatas() {
@@ -212,6 +224,7 @@ public class MagazineDetailActivity extends AppCompatActivity implements IMagazi
         public CircleImageView fork_circleImageView;
         public TextView fork_name;
         public TextView fork_subtitle;
+        public Button forkbtn;
 
         //做折叠效果
         public TextView descriptionView;
@@ -220,17 +233,31 @@ public class MagazineDetailActivity extends AppCompatActivity implements IMagazi
         public TextView expand_view_txt;
         public TextView txtnum;
         public Mylistview comment_listview;
-        public Button forkBtn;
 
         public SimpleHolder(View itemView) {
             super(itemView);
-            decription_lv = (Mylistview) itemView.findViewById(R.id.magazinedetail_recycler_item_description_listview);
-            became_author = (RelativeLayout) itemView.findViewById(R.id.magazinedetail_recycler_item_became_author);
-            share_article = (RelativeLayout) itemView.findViewById(R.id.magazinedetail_recycler_item_share_author);
-            //设计师&作品;
-            fork_circleImageView = (CircleImageView) itemView.findViewById(R.id.magazinedetail_recycler_item_design_fork_circleview);
-            fork_name = (TextView) itemView.findViewById(R.id.magazinedetail_recycler_item_design_name);
-            fork_subtitle = (TextView) itemView.findViewById(R.id.magazinedetail_recycler_item_design_description);
+            initForSimpleHolder(itemView);
+            //监听事件;
+            forkbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //关注:
+//                    Toast.makeText(MagazineDetailActivity.this,"a",Toast.LENGTH_SHORT).show();
+                    if (LoginInfo.current_login_flag){//已登陆
+                        if (!LoginInfo.magazineDetailActivity_Fork_flag){
+                            forkbtn.setText("已关注");
+                        } else {
+                            forkbtn.setText("+关注");
+                        }
+                        LoginInfo.magazineDetailActivity_Fork_flag = !LoginInfo.magazineDetailActivity_Fork_flag;
+                    } else {
+                        Intent intent = new Intent(MagazineDetailActivity.this, LoginActivity.class);
+                        MagazineDetailActivity.this.startActivity(intent);
+                    }
+
+                }
+            });
+
             //做折叠;
             expand_view_txt = (TextView) itemView.findViewById(R.id.magazinedetail_recycler_item_design_expand_view_txt);
 
@@ -298,18 +325,21 @@ public class MagazineDetailActivity extends AppCompatActivity implements IMagazi
             txtnum = (TextView) itemView.findViewById(R.id.magazinedetail_recycler_item_comment_txtnum);
             comment_listview = (Mylistview)itemView.findViewById(R.id.magazinedetail_recycler_item_comment_lv);
 
-            //监听事件;
-            forkBtn = (Button) itemView.findViewById(R.id.magazinedetail_recycler_item_design_btn);
-            forkBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //关注:
-                    Toast.makeText(MagazineDetailActivity.this,"a",Toast.LENGTH_SHORT).show();
-                }
-            });
 
 
 
+
+        }
+
+        private void initForSimpleHolder(View itemView) {
+            decription_lv = (Mylistview) itemView.findViewById(R.id.magazinedetail_recycler_item_description_listview);
+            became_author = (RelativeLayout) itemView.findViewById(R.id.magazinedetail_recycler_item_became_author);
+            share_article = (RelativeLayout) itemView.findViewById(R.id.magazinedetail_recycler_item_share_author);
+            //设计师&作品;
+            fork_circleImageView = (CircleImageView) itemView.findViewById(R.id.magazinedetail_recycler_item_design_fork_circleview);
+            fork_name = (TextView) itemView.findViewById(R.id.magazinedetail_recycler_item_design_name);
+            fork_subtitle = (TextView) itemView.findViewById(R.id.magazinedetail_recycler_item_design_description);
+            forkbtn = (Button) itemView.findViewById(R.id.magazinedetail_recycler_item_design_btn);
         }
     }
 }

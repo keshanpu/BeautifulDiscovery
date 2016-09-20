@@ -13,7 +13,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:orientation="vertical">
         <!--自我介绍-->
-        <com.android.beautifulthing.MagazineFragment.Tools.customview.Mylistview
+        <com.android.beautifulthing.MagazineFragment.tools.customview.Mylistview
             android:id="@+id/magazinedetail_recycler_item_description_listview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -331,7 +331,7 @@
             android:background="@color/colorwhite"
             android:layout_marginBottom="100dp"
             >
-            <com.android.beautifulthing.MagazineFragment.Tools.customview.Mylistview
+            <com.android.beautifulthing.MagazineFragment.tools.customview.Mylistview
                 android:id="@+id/magazinedetail_recycler_item_comment_lv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

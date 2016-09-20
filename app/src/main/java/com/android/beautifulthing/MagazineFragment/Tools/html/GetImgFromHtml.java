@@ -1,4 +1,4 @@
-package com.android.beautifulthing.MagazineFragment.Tools.html;
+package com.android.beautifulthing.MagazineFragment.tools.html;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -36,7 +36,7 @@ public class GetImgFromHtml implements Html.ImageGetter {
 
         @Override
         public Drawable getDrawable(String source) {
-
+//            Log.d("dd", "getDrawable: "+source);
 //kesp
             //
             //解析图片的大小;
@@ -44,7 +44,7 @@ public class GetImgFromHtml implements Html.ImageGetter {
             //取800X356px;
             String substring = source.substring(source.indexOf('_')+1, source.lastIndexOf('.'));
 //            Log.d("eedd", "getDrawable: "+substring);//得到800X526
-            String[] split = substring.split("x|X");
+            String[] split = substring.split("x");
 
 //            for(int i = 0; i < split.length; i++){
 //                Log.d("ffxx", "getDrawable: "+split[i]);
@@ -62,12 +62,11 @@ public class GetImgFromHtml implements Html.ImageGetter {
             if(width < width3){
                 int temp = width;
                 width = width3;//宽度始终设为屏幕宽度
-                //高度呢;
-                height += width3-temp;
+                //高度;
+                height += (width3-temp);
             }
             //over kesp
 
-            // TODO Auto-generated method stub
             // 将source进行MD5加密并保存至本地
             String imageName = getMD5Str(source);
             String sdcardPath = Environment.getExternalStorageDirectory()
@@ -86,10 +85,13 @@ public class GetImgFromHtml implements Html.ImageGetter {
             if (file.exists()) {
                 // 如果文件已经存在，直接返回
                 Drawable drawable = Drawable.createFromPath(savePath);
+                //有可能创建失败,所以需要加非空判断;
+                if (drawable != null){
+                    drawable.setBounds(0, 0, width,
+                            height);
+                    return drawable;
+                }
 
-                drawable.setBounds(0, 0, width,
-                        height);
-                return drawable;
             }
 
             // 不存在文件时返回默认图片，并异步加载网络图片

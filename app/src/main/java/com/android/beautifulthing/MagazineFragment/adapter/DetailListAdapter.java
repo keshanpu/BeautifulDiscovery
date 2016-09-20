@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.beautifulthing.MagazineFragment.Tools.html.GetImgFromHtml;
+import com.android.beautifulthing.MagazineFragment.tools.html.GetImgFromHtml;
 import com.android.beautifulthing.MagazineFragment.bean.MagazineDetailBean;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;

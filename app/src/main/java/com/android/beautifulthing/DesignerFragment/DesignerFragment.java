@@ -1,6 +1,7 @@
 package com.android.beautifulthing.DesignerFragment;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,12 +27,17 @@ import java.util.List;
  * Created by ydy on 2016/9/5
  */
 public class DesignerFragment extends Fragment implements IDesignerView {
+
     private Context mContext;
     private IDesignerPresent iDesignerPresent;
+
     private List<DesignerBean.DataBean.DesignersBean>designersBeanLists = new ArrayList<>();
     private PullToRefreshListView mPullToRefresh;
+
     private int page = 1;
     private DesignerAdapter designerAdapter;
+    private ProgressDialog dialog;
+
     public static DesignerFragment newInstance(){
         DesignerFragment designerFragment = new DesignerFragment();
         return designerFragment;
@@ -42,7 +48,11 @@ public class DesignerFragment extends Fragment implements IDesignerView {
         super.onCreate(savedInstanceState);
         mContext = getContext();
         iDesignerPresent = new DesignerPresenter(this);
+        dialog = new ProgressDialog(mContext);
+        dialog.setMessage("正在加载...");
+        dialog.show();
         iDesignerPresent.getDesignerList(page,30);
+
     }
 
     @Nullable
@@ -83,6 +93,10 @@ public class DesignerFragment extends Fragment implements IDesignerView {
     public void refreshListView(List<DesignerBean.DataBean.DesignersBean> designersBeanList) {
         designersBeanLists.addAll(designersBeanList);
         designerAdapter.notifyDataSetChanged();
+        if (dialog != null)
+        {
+            dialog.dismiss();
+        }
     }
 
 }

@@ -42,7 +42,6 @@
             android:layout_below="@id/fragment_mine_login_iv"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:text="登录"
             android:textColor="#ffffff" />
     </RelativeLayout>
 

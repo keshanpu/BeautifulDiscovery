@@ -1,4 +1,4 @@
-package com.android.beautifulthing.MagazineFragment.Tools.http;
+package com.android.beautifulthing.MagazineFragment.tools.http;
 
 import com.android.beautifulthing.MagazineFragment.bean.MagazineBean;
 import com.android.beautifulthing.MagazineFragment.bean.MagazineDetailBean;

@@ -18,6 +18,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.beautifulthing.CommonActivity.LoginActivity;
 import com.android.beautifulthing.DesignerFragment.Adapter.DesignerDetilAdapter;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerDetilBean;
 import com.android.beautifulthing.DesignerFragment.bean.DesignerShopBean;
@@ -32,6 +33,7 @@ import com.android.beautifulthing.DesignerFragment.presenter.impl.DesignerShopPr
 import com.android.beautifulthing.DesignerFragment.url.DataUrl;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerDetilView;
 import com.android.beautifulthing.DesignerFragment.view.IDesignerShop2View;
+import com.android.beautifulthing.MineFragment.LoginInfo;
 import com.android.beautifulthing.R;
 import com.squareup.picasso.Picasso;
 
@@ -130,6 +132,7 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
         ButterKnife.bind(this);
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mTabLayout.setupWithViewPager(mViewpager2);
+
     }
 
     private void loadDatas() {
@@ -180,17 +183,31 @@ public class DesignerDetilActivity extends AppCompatActivity implements IDesigne
                 break;
             case R.id.activity_designerdetil_btn:
 
-                if (mPWindow!=null){
-                if (mPWindow.isShowing()){
-                    mPWindow.dismiss();
-                }else {
-//                        initPopupWindow();
-                    MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+                if (false == LoginInfo.current_login_flag){
+                    Intent intent = new Intent(mContext, LoginActivity.class);
+                    mContext.startActivity(intent);
+                } else {
+                    if (false == LoginInfo.designerDetailActivity_Fork_flag){
+                        btn.setText("已关注");
+                    }
+                    else {
+                        btn.setText("+关注");
+                    }
+                    LoginInfo.designerDetailActivity_Fork_flag = !LoginInfo.designerDetailActivity_Fork_flag;
                 }
-            }else {
-//                    initPopupWindow();
-                    MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
-            }
+
+//                if (mPWindow!=null){
+//                    if (mPWindow.isShowing()){
+//                        mPWindow.dismiss();
+//                    }else {
+//    //                        initPopupWindow();
+//                        MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+//                    }
+//                }else {
+//    //                    initPopupWindow();
+//                        MyPopWindow.initPopupWindow(DesignerDetilActivity.this);
+//                }
+
             break;
 
         }

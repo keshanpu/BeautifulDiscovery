@@ -1,6 +1,6 @@
 package com.android.beautifulthing.MagazineFragment.model.impl;
 
-import com.android.beautifulthing.MagazineFragment.Tools.http.HttpUtils;
+import com.android.beautifulthing.MagazineFragment.tools.http.HttpUtils;
 import com.android.beautifulthing.MagazineFragment.bean.MagazineBean;
 import com.android.beautifulthing.MagazineFragment.model.IMagazineFragmentModel;
 import com.android.beautifulthing.MagazineFragment.presenter.IMagazineFragmentPresenter;

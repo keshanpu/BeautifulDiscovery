@@ -271,10 +271,10 @@ public class MagazineFragment extends Fragment implements IMagazineFragmentView 
             public void onPrepareLoad(Drawable placeHolderDrawable) {
                 // Pass the default thumbnail for now. It will
                 // be replaced once the target Bitmap has been loaded
-//                if (weakView.get() != null) {
-//                    weakView.get().onDataLoaded(datum, mDefaultTarget_image,
-//                            "Loading...", "Loading...","Loading...");
-//                }
+                if (weakView.get() != null) {
+                    weakView.get().onDataLoaded(datum, mDefaultTarget_image,
+                            "", "","");
+                }
                 //by kesp,不显示好看一点;
             }
         };
@@ -298,9 +298,9 @@ public class MagazineFragment extends Fragment implements IMagazineFragmentView 
 
             @Override
             public void onPrepareLoad(Drawable placeHolderDrawable) {
-//                if (weakView.get() != null) {
-//                    weakView.get().onDataLoaded2(datum,mDefaultTargetIcon);
-//                }
+                if (weakView.get() != null) {
+                    weakView.get().onDataLoaded2(datum,mDefaultTargetIcon);
+                }
             }
         };
 

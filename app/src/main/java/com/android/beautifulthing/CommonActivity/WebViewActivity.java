@@ -1,7 +1,8 @@
 package com.android.beautifulthing.CommonActivity;
 
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,11 +23,14 @@ public class WebViewActivity extends AppCompatActivity{
     private String shop_name;
     private String shop_url;
     private WebView mWebView;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview_view);
+
+
         //获取传值
         getIntentMsg();
         //初始化视图
@@ -80,14 +84,28 @@ public class WebViewActivity extends AppCompatActivity{
      * 加载WebView
      */
     private void loadWebView() {
+
         //WebView，加载网址
         mWebView.loadUrl(shop_url);
         //优化
         WebViewClient webViewClient = new WebViewClient(){
             @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                dialog = new ProgressDialog(WebViewActivity.this);
+                dialog.setMessage("正在加载...");
+                dialog.show();
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                dialog.dismiss();
             }
         };
         mWebView.setWebViewClient(webViewClient);

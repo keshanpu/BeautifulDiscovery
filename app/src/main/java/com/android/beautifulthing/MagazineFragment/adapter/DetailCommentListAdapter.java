@@ -65,7 +65,7 @@ public class DetailCommentListAdapter extends BaseAdapter{
         return view;
     }
 
-    public class CommentViewHolder {
+    class CommentViewHolder {
 
         public CircleImageView avatar_url;
         public TextView username;

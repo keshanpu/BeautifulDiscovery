@@ -684,13 +684,9 @@ public class DeckView<T> extends FrameLayout implements /*TaskStack.TaskStackCal
             } else {
                 mTmpRect.setEmpty();
             }
-//            tv.layout(mLayoutAlgorithm.mTaskRect.left,
-//                    mLayoutAlgorithm.mTaskRect.top,
-//                    mLayoutAlgorithm.mTaskRect.right,
-//                    mLayoutAlgorithm.mTaskRect.bottom);
             tv.layout(mLayoutAlgorithm.mTaskRect.left - mTmpRect.left,
-                    mLayoutAlgorithm.mTaskRect.top- mTmpRect.top,
-                    mLayoutAlgorithm.mTaskRect.right+ mTmpRect.right,
+                    mLayoutAlgorithm.mTaskRect.top - mTmpRect.top,
+                    mLayoutAlgorithm.mTaskRect.right + mTmpRect.right,
                     mLayoutAlgorithm.mTaskRect.bottom + mTmpRect.bottom);
         }
 

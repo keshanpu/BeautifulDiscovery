@@ -1,5 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+apply plugin: 'org.greenrobot.greendao'
+
+
+greendao {
+    schemaVersion 1
+    daoPackage 'com.android.beautifulthing.CommonActivity.greendao.gen'
+    targetGenDir 'src/main/java'
+}
 
 android {
     compileSdkVersion 23
@@ -21,7 +29,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
@@ -37,4 +45,8 @@ dependencies {
     compile 'com.android.support:design:24.1.1'
     compile project(':refreshlibrary')
     compile project(path: ':deckview')
+
+    //greendao数据库
+    compile 'org.greenrobot:greendao:3.1.1'
+    compile 'org.greenrobot:greendao-generator:3.1.0'
 }

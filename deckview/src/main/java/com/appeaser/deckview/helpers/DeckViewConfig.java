@@ -278,12 +278,12 @@ public class DeckViewConfig {
         //kesp modify 上面header的高度;
         // Task bar size & animations
         taskBarHeight = res.getDimensionPixelSize(R.dimen.deck_child_header_bar_height);
-//        taskBarDismissDozeDelaySeconds =
-//                res.getInteger(R.integer.task_bar_dismiss_delay_seconds);
+        taskBarDismissDozeDelaySeconds =
+                res.getInteger(R.integer.task_bar_dismiss_delay_seconds);
 
         // Nav bar scrim
-//        navBarScrimEnterDuration =
-//                res.getInteger(R.integer.nav_bar_scrim_enter_duration);
+        navBarScrimEnterDuration =
+                res.getInteger(R.integer.nav_bar_scrim_enter_duration);
 
         // Misc
         useHardwareLayers = res.getBoolean(R.bool.config_use_hardware_layers);

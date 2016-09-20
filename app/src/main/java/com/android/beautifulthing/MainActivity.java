@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements IUpdateView{
     private IUpdatePresenter updatePresenter;
     private String apk_url;
     private String update_desc;
+    public int last_ver_code;
+    public int  CODE_VERSION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +90,13 @@ public class MainActivity extends AppCompatActivity implements IUpdateView{
     public void updateResult(ApkUpdateBean.DataBean data) {
         update_desc = data.getUpdate_desc();
         apk_url = data.getApk_url();
-        //apk更新提示
-        apkUpdate();
+        last_ver_code = data.getLast_ver_code();
+        if (CODE_VERSION < last_ver_code){
+            //apk更新提示
+            apkUpdate();
+            CODE_VERSION = last_ver_code;
+        }
+
     }
 
     /**

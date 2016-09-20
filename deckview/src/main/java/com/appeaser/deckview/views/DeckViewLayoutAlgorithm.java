@@ -89,8 +89,8 @@ public class DeckViewLayoutAlgorithm<T> {
 
 
         //by kesp
-//        mWithinAffiliationOffset = mConfig.taskBarHeight;
-//         Update the affiliation offsets
+        mWithinAffiliationOffset = mConfig.taskBarHeight;
+        // Update the affiliation offsets
         //这里设置上面item的top距离下一个item的top.
         float visibleTaskPct = 0.6f;
         mBetweenAffiliationOffset = (int) (visibleTaskPct * mTaskRect.height());
@@ -123,8 +123,11 @@ public class DeckViewLayoutAlgorithm<T> {
         float pWithinAffiliateOffset = pAtBottomOfStackRect - pWithinAffiliateTop;
         float pBetweenAffiliateOffset = pAtBottomOfStackRect -
                 screenYToCurveProgress(mStackVisibleRect.bottom - mBetweenAffiliationOffset);
-        float pTaskHeightOffset = pAtBottomOfStackRect - screenYToCurveProgress(mStackVisibleRect.bottom - taskHeight);
-        float pNavBarOffset = pAtBottomOfStackRect - screenYToCurveProgress(mStackVisibleRect.bottom - (mStackVisibleRect.bottom - mStackRect.bottom));
+        float pTaskHeightOffset = pAtBottomOfStackRect -
+                screenYToCurveProgress(mStackVisibleRect.bottom - taskHeight);
+        float pNavBarOffset = pAtBottomOfStackRect -
+                screenYToCurveProgress(mStackVisibleRect.bottom - (mStackVisibleRect.bottom -
+                        mStackRect.bottom));
 
         // Update the task offsets
         float pAtBackMostCardTop = 0.5f;
@@ -145,7 +148,7 @@ public class DeckViewLayoutAlgorithm<T> {
             }
         }
 
-        mMaxScrollP = pAtFrontMostCardTop - ((1f - pNavBarOffset - pTaskHeightOffset));//
+        mMaxScrollP = pAtFrontMostCardTop - ((1f - pTaskHeightOffset - pNavBarOffset));
         mMinScrollP = data.size() == 1 ? Math.max(mMaxScrollP, 0f) : 0f;
         if (launchedWithAltTab && launchedFromHome) {
             // Center the top most task, since that will be focused first
@@ -193,8 +196,7 @@ public class DeckViewLayoutAlgorithm<T> {
                     numVisibleThumbnails++;
                     numVisibleTasks++;
                     prevScreenY = screenY;
-                } else
-                {
+                } else {
                     // Once we hit the next front most task that does not have a visible thumbnail,
                     // walk through remaining visible set
                     for (int j = i; j >= 0; j--) {
@@ -257,7 +259,8 @@ public class DeckViewLayoutAlgorithm<T> {
         int minZ = mConfig.taskViewTranslationZMinPx;
         int maxZ = mConfig.taskViewTranslationZMaxPx;
         transformOut.scale = scale;
-        transformOut.translationY = curveProgressToScreenY(pBounded) - mStackVisibleRect.top - scaleYOffset;
+        transformOut.translationY = curveProgressToScreenY(pBounded) - mStackVisibleRect.top -
+                scaleYOffset;
         transformOut.translationZ = Math.max(minZ, minZ + (pBounded * (maxZ - minZ)));
         transformOut.rect.set(mTaskRect);
         transformOut.rect.offset(0, transformOut.translationY);

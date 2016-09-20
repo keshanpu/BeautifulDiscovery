@@ -1,4 +1,4 @@
-package com.android.beautifulthing.MagazineFragment.Tools.http;
+package com.android.beautifulthing.MagazineFragment.tools.http;
 
 /**
  * Created by keshanpu on 16/8/23.

@@ -1,4 +1,4 @@
-package com.android.beautifulthing.MagazineFragment.Tools.http;
+package com.android.beautifulthing.MagazineFragment.tools.http;
 
 
 import retrofit2.Retrofit;
